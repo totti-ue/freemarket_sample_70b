@@ -29,7 +29,7 @@ Things you may want to cover:
 |nickname|string|null: false|
 |mail|string|null: false|
 |password|string|null: false|
-|family_name_kanji|string|null: false|
+|family_name|string|null: false|
 |family_name_kana|string|null: false|
 |birthday|string|null: false|
 |avatar|text||
@@ -54,7 +54,7 @@ Things you may want to cover:
 |text|text|null: false|
 |price|integer|null: false|
 |size|string|null: false|
-|status|string|null: false|
+|status|integer|null: false|
 |delivery_charge|string|null: false|
 |delivery_method|string|null: false|
 |delivery_origin|string|null: false|
