@@ -1,0 +1,99 @@
+.main {
+  padding: 100px 40px;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-image: url(pict/bg-appBanner-pict.jpg);
+  &__content {
+    text-align: center;
+    color: #fff;
+    &__title {
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 0 0 5px rgba(0,0,0,0.6);
+    }
+    &__text {
+      font-size: 35px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.6);
+    }
+    &__icon {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      width: 390px;
+      margin: 10px auto 0;
+      &__abtn {
+        background-color: black;
+        padding: 15px 45px 15px 45px;
+        background-image: url(https://i0.wp.com/iphone-media.net/wp-content/uploads/2016/11/duellinks03.png?fit=564%2C168);
+        background-position: center;
+        background-size: cover;
+        width: 100px;
+        border-radius: 8px 8px 8px 8px;
+      }
+      &__gbtn {
+        background-color: black;
+        padding: 15px 45px 15px 45px;
+        background-image: url(https://lh3.googleusercontent.com/ShkH71_PaT4dXnNq7lTKQfnC2RpNYQZI08acnQBsuGZQEGzcWM-pKlqOPyFh1H0DVbD102HSSfJCPADx_TcKYP-N3afW-u4neA2z2Q);
+        background-position: center;
+        background-size: cover;
+        width: 100px;
+        border-radius: 8px 8px 8px 8px;
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: #272727;
+  padding: 60px 0;
+  color: #fff;
+  text-align: center;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 360px 0px 360px;
+    &__box1 {
+    }
+    &__box2 {
+      margin-left: 20px;
+    }
+    &__box3 {
+    }
+  }
+  &__logo {
+  }
+}
+
+h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.a {
+  font-size: 12px;
+  color: #fff;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer__app-name {
+  width: 100%;
+  margin: auto;
+  max-width: 160px;
+}
+
+.aa {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.last {
+  font-size: 14px;
+}

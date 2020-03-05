@@ -1,1 +1,51 @@
 d
+.main
+  .main__content
+ 
+    .main__content__title
+      %h3 だれでもかんたん、人生を変えるフリマアプリ
+    .main__content__text
+      %p 今すぐ無料ダウンロード！
+    .main__content__icon
+      .main__content__icon__abtn
+        = link_to '#', class: 'a-btn'
+      .main__content__icon__gbtn
+        = link_to '#', class: 'g-btn'
+ 
+
+.footer
+  .footer__content
+    .footer__content__box1
+      .footer__content__box1__title
+        %h2 FURIMAについて
+        %ul
+          %li 
+            = link_to '会社概要 (運営会社)', '#', class: 'a'
+          %li 
+            = link_to 'プライバシーポリシー', '#', class: 'a'
+          %li 
+            = link_to 'FURIMA利用特約', '#', class: 'a'
+          %li 
+            = link_to 'ポイントに関する特約', '#', class: 'a'
+    .footer__content__box2
+      .footer__content__box2__title
+        %h2 FURIMAを見る
+        %ul
+          %li 
+            = link_to 'カテゴリー一覧', '#', class: 'a'
+          %li 
+            = link_to 'ブランド一覧', '#', class: 'a'
+    .footer__content__box3
+      .footer__content__box3__title
+        %h2 ヘルプ＆ガイド
+        %ul
+          %li 
+            = link_to 'FURIMAガイド', '#', class: 'a'
+          %li 
+            = link_to 'FURIMAロゴ利用ガイドライン', '#', class: 'a'
+          %li 
+            = link_to 'お知らせ', '#', class: 'a'
+  .footer__app-name 
+    = link_to '#', class: 'aa' do
+      = image_tag "logo/logo-white.png", class: 'aa' 
+    %p.last ＠FURIMA
