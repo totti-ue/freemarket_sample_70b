@@ -71,7 +71,7 @@ a {
       padding: 0 20px;
       .content-img {
         width: 70%;
-        height: 150px;
+        height: 300px;
         margin: 0 auto;
         .img1 {
           background-image: url(icon/icon-01.png);
@@ -148,11 +148,11 @@ a {
     }
     .innerbox {
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
       max-width: calc(1040px + 20px);
-      width: 100%;
-      padding: 10px 0;  
+      width: 780px;
+      margin: 26px auto;
       .product {
         .p-img1 {
           background-image: url(https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png);
