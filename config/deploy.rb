@@ -27,12 +27,27 @@ set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
+# secrets.yml を master.keyにする
+set :linked_files, %w{ config/master.key }
+
+# 元々記述されていた after 「'deploy:publishing', 'deploy:restart'」以下を削除して、次のように書き換え
+
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
-    # unicornを完全にキルしてから再起動する
-    invoke 'unicorn:stop'
+    invoke 'unicorn:stop'    # restart ではきちんと落ちない。 stop することで一度しっかり落ちる、そして start。
     invoke 'unicorn:start'
   end
+
+  desc 'upload master.key'
+  task :upload do
+    on roles(:app) do |host|
+      if test "[ ! -d #{shared_path}/config ]"
+        execute "mkdir -p #{shared_path}/config"
+      end
+      upload!('config/master.key', "#{shared_path}/config/master.key")
+    end
+  end
+  before :starting, 'deploy:upload'
   after :finishing, 'deploy:cleanup'
 end
