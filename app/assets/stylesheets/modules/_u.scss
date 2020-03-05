@@ -1,57 +1,173 @@
 $main-color: #3CCACE;
-$up-color: yellow;
-$dw-color: pink;
+$up-color: white;
+$dw-color: #f8f8f8;
+
+
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+p {
+  font-size: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
 
 // ⬇️この２つはmixinにする
-.upbox {
-  // background-color: beige;
+.theme {
   height: 40px;
   width: 800px;
   display: flex;
   justify-content: center;
-  font-size: 24px;
+  font-size: 27px;
   font-weight: bold;
   line-height: 30px;
 }
 
-.dwbox {
-  background-color: lightgreen;
-  height: 400px;
-  width: 800px;
+.img {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  vertical-align: bottom;
 }
 
 // mixin定義ここまでーーーーーーーーーーーーーー
 
-.upper-box {
-  background-color: $up-color;
+.main-top {
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 40px 0;
-  border: 1px solid gray;
+  padding: 60px 100px;
+  .theme.copy {
+  }
   .small-line {
     height: 4px;
     width: 70px;
     background-color: $main-color;
     margin-bottom: 20px;
+  }
 
+  // -------
+  .main-contents {
+    width: 100%;
+    max-width: calc(1040px + 20px);
+    display: flex;
+    .content {
+      height: auto;
+      width: calc(1 / 3 * 100%);
+      padding: 0 20px;
+      .content-img {
+        width: 70%;
+        height: 150px;
+        margin: 0 auto;
+        .img1 {
+          background-image: url(icon/icon-01.png);
+        }
+        .img2 {
+          background-image: url(icon/icon-03.png);
+        }
+        .img3 {
+          background-image: url(icon/icon-04.png);
+        }
+      }
+      .text-middle {
+        font-size: 19px;
+        font-weight: bold;
+        text-align: center;
+        margin: 28px 0 10px;
+      }
+      .text-bottom {
+        font-size: 16px;
+        font-weight: 200;
+        margin-bottom: 40px;
+      }
+    }
+  }  
+}
+
+
+
+// -----------------------------------------------
+// ⬇️これはmixinにする
+
+.product-body {
+  padding: 16px;
+}
+.product {
+  width: 220px;
+  // height: 280px;
+  margin: 10px;
+  // background-color: gray;
+  background-color: #fff;
+  .product-img {
+    background-color: white;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 }
 
-.lower-box {
+
+// -----------------------------------------------
+
+
+.main-under {
   background-color: $dw-color;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 40px;
-  .dwbox2 {
-    margin-bottom: 40px;
-  }
-  .dwbox3 {
-    margin-bottom: 40px;
+  padding-top: 80px;
+  .under-contents {
+    padding-bottom: 80px;
+    .theme {
+    }
+    .theme-under-text a {
+      text-decoration: none;
+      color: $main-color;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+    .innerbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: calc(1040px + 20px);
+      width: 100%;
+      padding: 10px 0;  
+      .product {
+        .p-img1 {
+          background-image: url(https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png);
+        }
+        .p-img2 {
+          background-image: url(https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png);
+        }
+        .p-img3 {
+          background-image: url(https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png);
+        }
+      }
+      .product:hover {
+        opacity: 0.5;
+      }
+    }
   }
 }
+  

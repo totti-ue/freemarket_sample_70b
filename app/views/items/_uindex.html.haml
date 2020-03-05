@@ -1,25 +1,151 @@
 c
--# 上の要素
-.upper-box
-  .upbox.up 
+-# 上の要素 --------------------------------------
+.main-top
+  .theme
     FURIMAの特徴
   .small-line
-  .dwbox.down
-    コンテンツ
+
+  .main-contents
+    .content
+      .content-img
+        .img.img1
+      .text-middle
+        簡単に売り買いできる
+      .text-bottom
+        スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+
+    .content
+      .content-img
+        .img.img2
+      .text-middle
+        売上金は即日振込みに対応
+      .text-bottom
+        午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+        
+    .content
+      .content-img
+        .img.img3
+      .text-middle
+        様々な支払いに対応
+      .text-bottom
+        お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
 
 
 
 
--# 下の要素
 
-.lower-box
-  .upbox
-    ピックアップカテゴリー
-  .pickup-category
-  .dwbox.dwbox2
-    コンテンツ１
-  .upbox
-    ピックアップブラインド
+
+-# 下の要素 ------------------------------------------
+
+.main-under
+  %section.under-contents
+    .theme
+      ピックアップカテゴリー
+    .theme-under-text=link_to "新規投稿商品", "#"
+    .innerbox
+      .product
+        %a{href:"/"}
+          .product-img.p-img1
+          .product-body
+            .product-name
+              product3
+            .product-detail
+              %ul
+                %li
+                  30000円
+                %li
+                  %i
+                    ★
+                  0
+              %p
+                (税込)
+      .product
+        %a{href:"/"}
+          .product-img.p-img2
+          .product-body
+            .product-name
+              product2
+            .product-detail
+              %ul
+                %li
+                  20000円
+                %li
+                  %i
+                    ★
+                  0
+              %p
+                (税込)
+      .product
+        %a{href:"/"}
+          .product-img.p-img3
+          .product-body
+            .product-name
+              product1
+            .product-detail
+              %ul
+                %li
+                  10000円
+                %li
+                  %i
+                    ★
+                  0
+              %p
+                (税込)
+
+
   
-  .dwbox.dwbox3
-    コンテンツ２
+  -# ----------------------------------
+  %section.under-contents
+    .theme
+      ピックアップブラインド
+    .theme-under-text=link_to "アーカイバ", "#"
+    
+    .innerbox.dwbox
+      .product
+        %a{href:"/"}
+          .product-img.p-img1
+          .product-body
+            .product-name
+              product3
+            .product-detail
+              %ul
+                %li
+                  30000円
+                %li
+                  %i
+                    ★
+                  0
+              %p
+                (税込)
+      .product
+        %a{href:"/"}
+          .product-img.p-img2
+          .product-body
+            .product-name
+              product2
+            .product-detail
+              %ul
+                %li
+                  20000円
+                %li
+                  %i
+                    ★
+                  0
+              %p
+                (税込)
+      .product
+        %a{href:"/"}
+          .product-img.p-img3
+          .product-body
+            .product-name
+              product1
+            .product-detail
+              %ul
+                %li
+                  10000円
+                %li
+                  %i
+                    ★
+                  0
+              %p
+                (税込)
