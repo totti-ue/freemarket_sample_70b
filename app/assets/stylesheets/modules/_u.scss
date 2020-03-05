@@ -1,0 +1,57 @@
+$main-color: #3CCACE;
+$up-color: yellow;
+$dw-color: pink;
+
+// ⬇️この２つはmixinにする
+.upbox {
+  // background-color: beige;
+  height: 40px;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.dwbox {
+  background-color: lightgreen;
+  height: 400px;
+  width: 800px;
+}
+
+// mixin定義ここまでーーーーーーーーーーーーーー
+
+.upper-box {
+  background-color: $up-color;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 0;
+  border: 1px solid gray;
+  .small-line {
+    height: 4px;
+    width: 70px;
+    background-color: $main-color;
+    margin-bottom: 20px;
+
+  }
+}
+
+.lower-box {
+  background-color: $dw-color;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 40px;
+  .dwbox2 {
+    margin-bottom: 40px;
+  }
+  .dwbox3 {
+    margin-bottom: 40px;
+  }
+}
