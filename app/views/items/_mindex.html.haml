@@ -1,1 +1,41 @@
 b
+.content-top
+  %h1.content-top__title FURIMAが選ばれる3つの理由
+  %ul.content-top__list
+    %li.photo
+      .number
+        %span 1
+        = image_tag '/assets/pict/pict-reason-01.jpg'
+      .text
+        %span 3分
+        ですぐに入力
+      %h2 スマホで入力するだけで簡単に出品できる！
+    %li.photo
+      .number
+        %span 2
+        = image_tag '/assets/pict/pict-reason-02.jpg'
+      .text
+        %span シンプル
+        で使いやすい
+      %h2 めんどくさい入力は必要なく、必要なく、検索も購入もスムーズ！
+    %li.photo.right
+      .number
+        %span 3
+        = image_tag '/assets/pict/pict-reason-03.jpg'
+      .text
+        手数料
+        %span 業界再安
+      %h2 最大3%でお得に出品&購入!
+    
+.content-bottom
+  .content-bottom__main
+    %h3 会員数日本一位
+    .content-bottom__main--text
+      FURIMAは、フリマアプリで最も人気。
+      %br
+      出品・購入回数も業界最多です！
+      %br
+      ほしかったあの商品に出会えるかもしれません。
+    .content-bottom__main--btn
+      = link_to image_tag '/assets/icon/app-store.svg'
+      = link_to image_tag '/assets/icon/google-play.svg'
