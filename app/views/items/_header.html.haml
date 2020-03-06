@@ -3,12 +3,12 @@
     .header-container__top
       .header-container__top--logo
         = link_to "/" do
-          = image_tag 'logo/logo.png', height: '100%', width: '100%', class: 'logo'
+          = image_tag asset_path('logo/logo.png'), height: '100%', width: '100%', class: 'logo'
       .header-container__top--search
         %input.input-area{placeholder: "キーワードから探す", type: "text", class: "input-area"}
         %span<>
         %button
-          = image_tag 'icon/icon-search 1.png', class: 'icon'
+          = image_tag asset_path('icon/icon-search 1.png'), class: 'icon'
     .header-container__nav
       %ul.header-container__nav--list-left
         %li.category-list

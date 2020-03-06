@@ -4,7 +4,7 @@
     %li.photo
       .number
         %span.number-count 1
-        = image_tag '/assets/pict/pict-reason-01.jpg', class: "number-image"
+        = image_tag asset_path('/assets/pict/pict-reason-01.jpg'), class: "number-image"
       .text
         %span.number-text 3分
         ですぐに出品
@@ -12,7 +12,7 @@
     %li.photo
       .number
         %span.number-count 2
-        = image_tag '/assets/pict/pict-reason-02.jpg', class: "number-image"
+        = image_tag asset_path('/assets/pict/pict-reason-02.jpg'), class: "number-image"
       .text
         %span.number-text シンプル
         で使いやすい
@@ -20,7 +20,7 @@
     %li.photo.right
       .number
         %span.number-count 3
-        = image_tag '/assets/pict/pict-reason-03.jpg', class: "number-image"
+        = image_tag asset_path('/assets/pict/pict-reason-03.jpg'), class: "number-image"
       .text
         手数料
         %span.number-text 業界最安
@@ -36,5 +36,5 @@
       %br
       ほしかったあの商品に出会えるかもしれません。
     .section-third__main--btn
-      = link_to image_tag '/assets/icon/app-store.svg', class: "store-icon app-store"
-      = link_to image_tag '/assets/icon/google-play.svg', class: "store-icon google-play"
+      = link_to image_tag asset_path('/assets/icon/app-store.svg'), class: "store-icon app-store"
+      = link_to image_tag asset_path('/assets/icon/google-play.svg'), class: "store-icon google-play"
