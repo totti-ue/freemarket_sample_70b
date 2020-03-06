@@ -16,6 +16,7 @@ header {
       &--search {
         width: calc(100% - 170px);
         margin-bottom: 5px;
+        display: flex;
         .input-area {
           width: calc(100% - 50px);
           height: 32px;
