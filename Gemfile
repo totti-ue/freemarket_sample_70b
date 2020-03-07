@@ -72,6 +72,7 @@ group :development, :test do
   gem 'capistrano-rails-console'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :production do
