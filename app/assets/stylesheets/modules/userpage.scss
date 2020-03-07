@@ -1,4 +1,7 @@
-$gray-scale: rgb(220,220,220);
+$border-gray: rgb(220,220,220);
+$links-after-hover: rgb(247,247,247);
+$font-color: #333;
+
 .user-page {
 
   &__main {
@@ -17,7 +20,7 @@ $gray-scale: rgb(220,220,220);
       .nav-list {
         height: 50px;
         background-color: white;
-        border-top: 1px solid rgb(220,220,220);
+        border-top: 1px solid $border-gray;
         padding: 0px 16px;
       }
       .first-list {
@@ -33,23 +36,23 @@ $gray-scale: rgb(220,220,220);
         line-height: 50px;
       }
       .nav-destination {
-        color: #333;
+        color: $font-color;
       }
       .nav-icon {
         color: #ccc;
       }
       .heading {
         margin: 40px 0px 5px;
-        color: #333;
+        color: $font-color;
         font-weight: bold;
       }
       // ------sidebar内、全てに共通のCSS:hover----
       .nav-list:hover {
-        background-color: rgb(247,247,247);
+        background-color: $links-after-hover;
         padding-right: 10px;
         .nav-icon {
           transition: 0.6s;
-          color: #333;
+          color: $font-color;
         }
       }
     }
@@ -64,6 +67,7 @@ $gray-scale: rgb(220,220,220);
         background-color:rgba(255,255,255,0.4);
         background-blend-mode:lighten;
         .header {
+          color: $font-color;
           padding: 40px 0px;
           &__avatar {
             height: 60px;
@@ -116,12 +120,12 @@ $gray-scale: rgb(220,220,220);
         }
         &--right {
           // border-top: 2px solid white;
-          background-color: $gray-scale;
+          background-color: $border-gray;
         }
         .tab-link {
           display: block;
           text-decoration: none;
-          color: #333;
+          color: $font-color;
         }
         .tab-link:hover {
           opacity: 0.6;
@@ -133,7 +137,7 @@ $gray-scale: rgb(220,220,220);
           display: block;
           height: 80px;
           background-color: white;
-          border-top: 1px solid rgb(220,220,220);
+          border-top: 1px solid $border-gray;
           padding: 0px 16px;
           .logo-box {
             display: block;
@@ -154,16 +158,16 @@ $gray-scale: rgb(220,220,220);
             display: flex;
 
             .message,.nav-icon {
-              color: #333;
+              color: $font-color;
               line-height: 80px;
             }
             .message {
-              width: calc(100% - 80px)
+              width: calc(100% - 80px);
             }
           }
         }
         &__list:hover {
-          background-color: rgb(250,250,250);
+          background-color: $links-after-hover;
           padding-right: 14px;
           .nav-icon {
             transition: 0.6s;
@@ -174,15 +178,15 @@ $gray-scale: rgb(220,220,220);
           .all-list {
             text-decoration: none;
             display: block;
-            color: #333;
+            color: $font-color;
             font-size: 16px;
-            border-top: 1px solid rgb(220,220,220);
+            border-top: 1px solid $border-gray;
             line-height: 80px;
             text-align: center;
           }
         }
         &__submit:hover {
-          background-color: rgb(245,245,245);
+          background-color: $links-after-hover;
         }
         .first-list {
           border: none;
