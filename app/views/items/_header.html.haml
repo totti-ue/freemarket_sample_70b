@@ -16,7 +16,25 @@
         %li.brand-list
           = link_to "ブランド", "/", class:"link"
       %ul.header-container__nav--list-right
-        %li.login
-          = link_to "ログイン", "/", class:"link"
-        %li.sign-up
-          = link_to "新規会員登録", "/", class:"link"
+        - if user_signed_in? 
+          %li.likes
+            = link_to user_path, class:"link" do
+              = icon('far', 'heart', class: "header-icon")
+              %p いいね！一覧
+          %li.notification
+            = link_to user_path, class:"link" do
+              = icon('far', 'bell', class: "header-icon")
+              %p お知らせ
+          %li.to-do-list
+            = link_to user_path, class:"link" do
+              = icon('fas', 'check', class: "header-icon")
+              %p やることリスト
+          %li.mypage
+            = link_to user_path, class:"link" do
+              .avatar-icon
+              %p マイページ
+        - else
+          %li.login
+            = link_to "ログイン", new_user_session_path, class:"link"
+          %li.sign-up
+            = link_to "新規会員登録", new_user_registration_path, class:"link"
