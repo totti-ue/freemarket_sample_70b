@@ -1,0 +1,64 @@
+
+.user-page__main--content
+  .header-container
+    .header
+      .header__avatar
+        -# アバターアイコン
+      .header__user-name
+        %p
+          hoge
+      .header__info
+        .header__info--assessment
+          %p.title 評価
+          %p.num 1
+        .header__info--exhibit
+          %p.title 出品
+          %p.num 2
+
+  %ul.user-page-tabs
+    %li.user-page-tabs--left.notice
+      = link_to user_path, class: "tab-link" do
+        お知らせ
+    %li.user-page-tabs--right.to-do-list
+      = link_to user_path, class: "tab-link" do
+        やることリスト
+
+  %ul.notifivation-container
+    -# - notice.each do |i|
+    %li.notifivation-container__list.first-list
+      = link_to "user_path", class: "notice-links top-link" do
+        .logo-box
+          = image_tag asset_path('logo/box-logo.png'), height: '100%', width: '100%', class: 'logo'
+        %p.message
+          事務局から個別メッセージ「登録完了のお知らせ」
+        = icon('fas', 'chevron-right', class: 'nav-icon')
+    %li.notifivation-container__list
+      = link_to "user_path", class: "notice-links" do
+        .logo-box
+          = image_tag asset_path('logo/box-logo.png'), height: '100%', width: '100%', class: 'logo'
+        %p.message
+          事務局から個別メッセージ「パスワード再設定のお願い」
+        = icon('fas', 'chevron-right', class: 'nav-icon')
+    %li.notifivation-container__list
+      = link_to "user_path", class: "notice-links" do
+        .logo-box
+          = image_tag asset_path('logo/box-logo.png'), height: '100%', width: '100%', class: 'logo'
+        %p.message
+          事務局から個別メッセージ「出品商品にコメントされました」
+        = icon('fas', 'chevron-right', class: 'nav-icon')
+    %li.notifivation-container__submit
+      = link_to "一覧を見る", "user_path", class: "notice-links all-list"
+
+  %p.transaction
+    %h1.transaction__heading
+      購入した商品
+    %ul.user-page-tabs.transaction__tabs
+      %li.user-page-tabs--left.current
+        = link_to user_path, class: "tab-link" do
+          取引中
+      %li.user-page-tabs--right.previous
+        = link_to user_path, class: "tab-link" do
+          過去の取引
+    .transaction__log
+      %p.transaction__log--message
+        取引中の商品がありません

@@ -1,1 +1,8 @@
-%p show
+.user-page
+  = render "items/header"
+  .user-page__main
+    = render "users/shared/sidebar"
+    = render "users/shared/content"
+
+  = render "items/footer"
+  = render "items/push-icon"

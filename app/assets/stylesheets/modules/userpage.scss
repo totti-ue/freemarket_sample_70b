@@ -1,0 +1,217 @@
+$border-gray: rgb(220,220,220);
+$links-after-hover: rgb(247,247,247);
+$font-color: #333;
+
+.user-page {
+
+  &__main {
+    height: 1360px;
+    width: 100%;
+    background-color: rgba(240,240,240,0.9);
+    margin: 0px auto;
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    &--sidebar {
+      width: 280px;
+      margin-right: 40px;
+
+      // ------sidebar内、全てに共通のCSS-----------------
+      .nav-list {
+        height: 50px;
+        background-color: white;
+        border-top: 1px solid $border-gray;
+        padding: 0px 16px;
+      }
+      .first-list {
+        border: none;
+      }
+      .user-links {
+        text-decoration: none;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .nav-destination,.nav-icon {
+        line-height: 50px;
+      }
+      .nav-destination {
+        color: $font-color;
+      }
+      .nav-icon {
+        color: #ccc;
+      }
+      .heading {
+        margin: 40px 0px 5px;
+        color: $font-color;
+        font-weight: bold;
+      }
+      // ------sidebar内、全てに共通のCSS:hover----
+      .nav-list:hover {
+        background-color: $links-after-hover;
+        padding-right: 10px;
+        .nav-icon {
+          transition: 0.6s;
+          color: $font-color;
+        }
+      }
+    }
+
+    &--content {
+      width: 700px;
+      margin-bottom: 40px;
+      .header-container {
+        height: 200px;
+        background-image: image-url("pict/mt.fuji.jpg");
+        background-size: cover;
+        background-color:rgba(255,255,255,0.4);
+        background-blend-mode:lighten;
+        .header {
+          color: $font-color;
+          padding: 40px 0px;
+          &__avatar {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            background-color: #e3e3e3;
+            margin: 0px auto;
+          }
+          &__user-name {
+            margin-top: 10px;
+            text-align: center;
+          }
+          &__info {
+            height: 32px;
+            line-height: 32px;
+            display: flex;
+            justify-content: center;
+            &--assessment,&--exhibit {
+            display: flex;
+            justify-content: center;
+            }
+            &--assessment {
+              margin-right: 16px;
+            }
+            .title {
+              font-size: 14px;
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+      .user-page-tabs {
+        height: 73px;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &--left,&--right {
+          height: 100%;
+          width: 50%;
+          display: block;
+          font-weight: bold;
+          margin: auto;
+          text-align: center;
+          line-height: 73px;
+        }
+        &--left {
+          border-top: 2px solid $main-color;
+        }
+        &--right {
+          background-color: $border-gray;
+        }
+        .tab-link {
+          display: block;
+          text-decoration: none;
+          color: $font-color;
+        }
+        .tab-link:hover {
+          opacity: 0.6;
+        }
+      }
+      .notifivation-container {
+        margin-bottom: 40px;
+        &__list {
+          display: block;
+          height: 80px;
+          background-color: white;
+          border-top: 1px solid $border-gray;
+          padding: 0px 16px;
+          .logo-box {
+            display: block;
+            height: 60px;
+            width: 60px;
+            background-color: rgb(245,245,245);
+            margin: 10px;
+            .logo {
+              width: 80%;
+              height: 80%;
+              padding: 6px 4px 6px 8px;
+            }
+          }
+          .notice-links {
+            width: 100%;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+
+            .message,.nav-icon {
+              color: $font-color;
+              line-height: 80px;
+            }
+            .message {
+              width: calc(100% - 80px);
+            }
+          }
+        }
+        &__list:hover {
+          background-color: $links-after-hover;
+          padding-right: 14px;
+          .nav-icon {
+            transition: 0.6s;
+          }
+        }
+        &__submit {
+          background-color: white;
+          .all-list {
+            text-decoration: none;
+            display: block;
+            color: $font-color;
+            font-size: 16px;
+            border-top: 1px solid $border-gray;
+            line-height: 80px;
+            text-align: center;
+          }
+        }
+        &__submit:hover {
+          background-color: $links-after-hover;
+        }
+        .first-list {
+          border: none;
+        }
+      }
+      .transaction {
+        &__heading {
+          height: 60px;
+          background-color: white;
+          font-weight: bold;
+          line-height: 60px;
+          padding-left: 16px;
+        }
+        &__log {
+          height: 240px;
+          width: 100%;
+          background-color: white;
+
+          &--message {
+            color: rgba(0,0,0,0.25);
+            font-weight: bold;
+            line-height: 240px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
