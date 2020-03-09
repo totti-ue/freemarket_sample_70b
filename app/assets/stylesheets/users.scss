@@ -266,16 +266,17 @@
         .main-family__kana {
           margin-top: 32px;
         }
-        .main-barthday {
+        .main-birthday {
           margin-top: 32px;
           &__text{
             &--left {
-              width: 76px;
+              display: flex;
+              width: 350px;
               margin: 8px 0 0;
-              display: inline-block;
               position: relative;
               background: #fff;
-              .icon-barthday {
+              line-height: 3;
+              .icon-birthday {
                 right: 12px;
                 position: absolute;
                 top: 50%;
@@ -294,7 +295,7 @@
                 line-height: 1;
                 -webkit-font-smoothing: antialiased;
               }
-              .barthday__select {
+              #user_birthday {
                 width: 100%;
                 padding: 0 10px;
                 position: relative;
@@ -308,7 +309,26 @@
                 line-height: 1.5;
                 cursor: pointer;
               }
-              .barthday__select:focus {
+              #user_birthday:focus {
+                outline: 0;
+                border: 1px solid $main-color;
+              }
+              select {
+                width: 100%;
+                padding: 0 10px;
+                position: relative;
+                z-index: 2;
+                height: 48px;
+                padding: 0 16px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: 0;
+                font-size: 16px;
+                line-height: 1.5;
+                cursor: pointer;
+                margin: 0 10px;
+              }
+              select:focus {
                 outline: 0;
                 border: 1px solid $main-color;
               }
@@ -321,12 +341,12 @@
               width: 76px;
               margin: 8px 0 0;
             }
-            .barthday {
+            .birthday {
               margin: 0 2px;
             }
           }
         }
-        .barthday-text {
+        .birthday-text {
           margin: 8px 0 0;
           line-height: 1.5;
           color: #888;
