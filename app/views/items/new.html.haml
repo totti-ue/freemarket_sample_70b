@@ -1,126 +1,212 @@
 .exhibit-header
   .exhibit-header__logo
-    = link_to '#', class: 'header-logo' do
+    = link_to '/', class: 'header-logo' do
       = image_tag asset_path('logo/logo.png'), class: 'header-logo'
 
 
 .exhibit-box
   .exhibit-box__main
-    .exhibit-box__main__image
-      .exhibit-box__main__image__text
-        %h3.bold-text 出品画像
-        %p.require-text 必須
-      .exhibit-box__main__image__description
-        %p 最大10枚までアップロードできます
-      .exhibit-box__main__image__form
-        %input.input-area{placeholder: "クリックしてファイルをアップロード", type: "text", class: "form-area-image"}
-    
-    .exhibit-box__main__content
-      .exhibit-box__main__content__namebox
-        .exhibit-box__main__content__namebox__text
-          %h3.bold-text 商品名
+    = form_with model: @items, class: "aaaaa", local: true do |form|
+      .exhibit-box__main__image
+        .exhibit-box__main__image__text
+          %h3.bold-text 出品画像
           %p.require-text 必須
-        .exhibit-box__main__content__namebox__form
-          %input.input-area{placeholder: "40文字まで", type: "text", class: "form-area-name"}
-      .exhibit-box__main__content__namebox
-        .exhibit-box__main__content__namebox__text
-          %h3.bold-text 商品の説明
-          %p.require-text 必須
-        .exhibit-box__main__content__namebox__form
-          %input.input-area{placeholder: "1,000文字まで（色、素材、重さ、定価、注意点など）", type: "text", class: "form-area-description"}
-    
-    .exhibit-box__main__details
-      .exhibit-box__main__details__categorybox
-        %h2.item-details-title 商品の詳細
-        .exhibit-box__main__details__categorybox__text
-          %h3.bold-text カテゴリー
-          %p.require-text 必須
-        .exhibit-box__main__details__categorybox__form
-          %input.input-area{placeholder: "選択してください", type: "text", class: "form-area-category"}
-      .exhibit-box__main__details__brandbox
-        .exhibit-box__main__details__brandbox__text
-          %h3.bold-text ブランド
-          %p.any-text 任意
-        .exhibit-box__main__details__brandbox__form
-          %input.input-area{placeholder: "例） NIKE", type: "text", class: "form-area-brand"}
-      .exhibit-box__main__details__statusbox
-        .exhibit-box__main__details__statusbox__text
-          %h3.bold-text 商品の状態
-          %p.require-text 必須
-        .exhibit-box__main__details__statusbox__form
-          %input.input-area{placeholder: "選択してください", type: "text", class: "form-area-status"}
-    
-    .exhibit-box__main__delivery
-      .exhibit-box__main__delivery__chargebox
-        %h2.item-delivery-title 配送について
-        .exhibit-box__main__delivery__chargebox__text
-          %h3.bold-text 配送料の負担
-          %p.require-text 必須
-        .exhibit-box__main__delivery__chargebox__form
-          %input.input-area{placeholder: "選択してください", type: "text", class: "form-area-charge"}
-      .exhibit-box__main__delivery__originbox
-        .exhibit-box__main__delivery__originbox__text
-          %h3.bold-text 配送元の地域
-          %p.require-text 必須
-        .exhibit-box__main__delivery__originbox__form
-          %input.input-area{placeholder: "選択してください", type: "text", class: "form-area-origin"}
-      .exhibit-box__main__delivery__sizebox
-        .exhibit-box__main__delivery__sizebox__text
-          %h3.bold-text 配送物のサイズ
-          %p.require-text 必須
-        .exhibit-box__main__delivery__sizebox__form
-          %input.input-area{placeholder: "選択してください", type: "text", class: "form-area-size"}
-      .exhibit-box__main__delivery__methodbox
-        .exhibit-box__main__delivery__methodbox__text
-          %h3.bold-text 配送の方法
-          %p.require-text 必須
-        .exhibit-box__main__delivery__methodbox__form
-          %input.input-area{placeholder: "選択してください", type: "text", class: "form-area-method"}
-      .exhibit-box__main__delivery__indicationbox
-        .exhibit-box__main__delivery__indicationbox__text
-          %h3.bold-text 配送までの日数
-          %p.require-text 必須
-        .exhibit-box__main__delivery__indicationbox__form
-          %input.input-area{placeholder: "選択してください", type: "text", class: "form-area-indication"}
-    
-    .exhibit-box__main__under 
-      .exhibit-box__main__under__range
-        %h2.price-range-title 価格 (¥300〜9,999,999)
-      .exhibit-box__main__under__input
-        %h3.bold-text-price 販売価格
-        %p.require-text-price 必須
-        %p.dollar-mark￥
-        %input.input-area{placeholder: "0", type: "text", class: "form-area-price"}
-      .exhibit-box__main__under__commission
-        %h4.price-commission 販売手数料 (10%)
-        %p.simple-hyphen-up ---
-      .exhibit-box__main__under__hyphen
-      .exhibit-box__main__under__profit
-        %h4.price-profit 販売利益
-        %p.simple-hyphen-down ---
-      .exhibit-box__main__under__submit
-        .exhibit-box__main__under__submit--exhibit-btn
-          = link_to '出品する', '#', class: 'exhibit-btn'
-        .exhibit-box__main__under__submit--return-btn
-          = link_to 'もどる', '#', class: 'return-btn'
-      .exhibit-box__main__under__attention
-        %p.under-attention
-          禁止されている
-          %span.action<>
-            = link_to '行為', '#', class: 'attention-text'
-          および
-          %span.exhibit-item<>
-            = link_to '出品物', '#', class: 'attention-text'
-          を必ずご確認ください。
-          %span.fake-brand<>
-            = link_to '偽ブランド品', '#', class: 'attention-text'
-          や
-          %span.swag-item<>
-            = link_to '盗品物', '#', class: 'attention-text'
-          などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
-          %span.merchant-terms<>
-            = link_to '加盟店規約', '#', class: 'attention-text'
-          に同意したことになります
+        .exhibit-box__main__image__description
+          %p.image-guide 最大10枚までアップロードできます
+        .exhibit-box__main__image__form
+          = form.text_field :image, placeholder: "クリックしてファイルをアップロード", class: "form-area-image"
+      
+      .exhibit-box__main__content
+        .exhibit-box__main__content__namebox
+          .exhibit-box__main__content__namebox__text
+            %h3.bold-text 商品名
+            %p.require-text 必須
+          .exhibit-box__main__content__namebox__form
+            = form.text_field :text, placeholder: "40文字まで", maxlength: "40", class: "form-area-name"
+        .exhibit-box__main__content__namebox
+          .exhibit-box__main__content__namebox__text
+            %h3.bold-text 商品の説明
+            %p.require-text 必須
+          .exhibit-box__main__content__namebox__form
+            = form.text_area :text, placeholder: "1,000文字まで（色、素材、重さ、定価、注意点など）", maxlength: "1000", class: "form-area-description"
+
+      .exhibit-box__main__details
+        .exhibit-box__main__details__categorybox
+          %h2.item-details-title 商品の詳細
+          .exhibit-box__main__details__categorybox__text
+            %h3.bold-text カテゴリー
+            %p.require-text 必須
+          .exhibit-box__main__details__categorybox__form
+            %select.form-area-category
+              %option{ value: "1"} 選択してください
+              %option{ value: "2"} レディース
+              %option{ value: "3"} メンズ
+              %option{ value: "4"} ベビー・キッズ
+              %option{ value: "5"} インテリア・住まい・小物
+              %option{ value: "6"} 本・音楽・ゲーム
+              %option{ value: "7"} おもちゃ・ホビー・グッズ
+              %option{ value: "8"} コスメ・香水・美容
+              %option{ value: "9"} 家電・スマホ・カメラ
+              %option{ value: "10"} スポーツ・レジャー
+              %option{ value: "11"} ハンドメイド
+              %option{ value: "12"} チケット
+              %option{ value: "13"} 自動車・オートバイ
+              %option{ value: "14"} その他
+        .exhibit-box__main__details__brandbox
+          .exhibit-box__main__details__brandbox__text
+            %h3.bold-text ブランド
+            %p.any-text 任意
+          .exhibit-box__main__details__brandbox__form
+            = form.text_field :text, placeholder: "例） NIKE", class: "form-area-brand"
+        .exhibit-box__main__details__statusbox
+          .exhibit-box__main__details__statusbox__text
+            %h3.bold-text 商品の状態
+            %p.require-text 必須
+          .exhibit-box__main__details__statusbox__form
+            %select.form-area-status
+              %option{ value: "1"} 選択してください
+              %option{ value: "2"} 新品、未使用
+              %option{ value: "3"} 未使用に近い
+              %option{ value: "4"} 目立った傷や汚れなし
+              %option{ value: "5"} やや傷や汚れあり
+              %option{ value: "6"} 傷や汚れあり
+              %option{ value: "7"} 全体的に状態が悪い
+      
+      .exhibit-box__main__delivery
+        .exhibit-box__main__delivery__chargebox
+          %h2.item-delivery-title 配送について
+          .exhibit-box__main__delivery__chargebox__text
+            %h3.bold-text 配送料の負担
+            %p.require-text 必須
+          .exhibit-box__main__delivery__chargebox__form
+            %select.form-area-charge
+              %option{ value: "1"} 選択してください
+              %option{ value: "2"} 送料込み（出品者負担）
+              %option{ value: "3"} 着払い（購入者負担）
+        .exhibit-box__main__delivery__originbox
+          .exhibit-box__main__delivery__originbox__text
+            %h3.bold-text 配送元の地域
+            %p.require-text 必須
+          .exhibit-box__main__delivery__originbox__form
+            %select.form-area-origin
+              %option{ value: ""} 選択してください
+              %option{ value: "1"} 北海道
+              %option{ value: "2"} 青森県
+              %option{ value: "3"} 岩手県
+              %option{ value: "4"} 宮城県
+              %option{ value: "5"} 秋田県
+              %option{ value: "6"} 山形県
+              %option{ value: "7"} 福島県
+              %option{ value: "8"} 茨城県
+              %option{ value: "9"} 栃木県
+              %option{ value: "10"} 群馬県
+              %option{ value: "11"} 埼玉県
+              %option{ value: "12"} 千葉県
+              %option{ value: "13"} 東京都
+              %option{ value: "14"} 神奈川県
+              %option{ value: "15"} 新潟県
+              %option{ value: "16"} 富山県
+              %option{ value: "17"} 石川県
+              %option{ value: "18"} 福井県
+              %option{ value: "19"} 山梨県
+              %option{ value: "20"} 長野県
+              %option{ value: "21"} 岐阜県
+              %option{ value: "22"} 静岡県
+              %option{ value: "23"} 愛知県
+              %option{ value: "24"} 三重県
+              %option{ value: "25"} 滋賀県
+              %option{ value: "26"} 京都府
+              %option{ value: "27"} 大阪府
+              %option{ value: "28"} 兵庫県
+              %option{ value: "29"} 奈良県
+              %option{ value: "30"} 和歌山県
+              %option{ value: "31"} 鳥取県
+              %option{ value: "32"} 島根県
+              %option{ value: "33"} 岡山県
+              %option{ value: "34"} 広島県
+              %option{ value: "35"} 山口県
+              %option{ value: "36"} 徳島県
+              %option{ value:"37"} 香川県
+              %option{ value: "38"} 愛媛県
+              %option{ value: "39"} 高知県
+              %option{ value: "40"} 福岡県
+              %option{ value: "41"} 佐賀県
+              %option{ value: "42"} 長崎県
+              %option{ value: "43"} 熊本県
+              %option{ value: "44"} 大分県
+              %option{ value: "45"} 宮崎県
+              %option{ value: "46"} 鹿児島県
+              %option{ value: "47"} 沖縄県
+        .exhibit-box__main__delivery__sizebox
+          .exhibit-box__main__delivery__sizebox__text
+            %h3.bold-text 配送物のサイズ
+            %p.require-text 必須
+          .exhibit-box__main__delivery__sizebox__form
+            %select.form-area-size
+              %option{ value: "1"} 選択してください
+              %option{ value: "2"} ネコポス（A4サイズ・厚さ2.5cm以内）
+              %option{ value: "3"} 宅急便コンパクト
+              %option{ value: "4"} 宅急便（60~160サイズ）
+        .exhibit-box__main__delivery__methodbox
+          .exhibit-box__main__delivery__methodbox__text
+            %h3.bold-text 配送の方法
+            %p.require-text 必須
+          .exhibit-box__main__delivery__methodbox__form
+            %select.form-area-method
+              %option{ value: "1"} 選択してください
+              %option{ value: "2"} 未定
+              %option{ value: "3"} クロネコヤマト
+              %option{ value: "4"} ゆうパック
+              %option{ value: "4"} ゆうメール
+        .exhibit-box__main__delivery__indicationbox
+          .exhibit-box__main__delivery__indicationbox__text
+            %h3.bold-text 配送までの日数
+            %p.require-text 必須
+          .exhibit-box__main__delivery__indicationbox__form
+            %select.form-area-indication
+              %option{ value: "1"} 選択してください
+              %option{ value: "2"} 1~2日で発送
+              %option{ value: "3"} 2~3日で発送
+              %option{ value: "4"} 4~7日で発送
+      
+      .exhibit-box__main__under 
+        .exhibit-box__main__under__range
+          %h2.price-range-title 価格 (¥300〜9,999,999)
+        .exhibit-box__main__under__input
+          %h3.bold-text-price 販売価格
+          %p.require-text-price 必須
+          %p.dollar-mark￥
+          = form.text_field :text, placeholder: "0", class: "form-area-price"
+        .exhibit-box__main__under__commission
+          %h4.price-commission 販売手数料 (10%)
+          %p.simple-hyphen-up ---
+        .exhibit-box__main__under__hyphen
+        .exhibit-box__main__under__profit
+          %h4.price-profit 販売利益
+          %p.simple-hyphen-down ---
+        .exhibit-box__main__under__submit
+          .exhibit-box__main__under__submit--exhibit-btn
+            = link_to '出品する', '#', class: 'exhibit-btn'
+          .exhibit-box__main__under__submit--return-btn
+            = link_to 'もどる', '/', class: 'return-btn'
+        .exhibit-box__main__under__attention
+          %p.under-attention
+            禁止されている
+            %span.action<>
+              = link_to '行為', '#', class: 'attention-text'
+            および
+            %span.exhibit-item<>
+              = link_to '出品物', '#', class: 'attention-text'
+            を必ずご確認ください。
+            %span.fake-brand<>
+              = link_to '偽ブランド品', '#', class: 'attention-text'
+            や
+            %span.swag-item<>
+              = link_to '盗品物', '#', class: 'attention-text'
+            などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
+            %span.merchant-terms<>
+              = link_to '加盟店規約', '#', class: 'attention-text'
+            に同意したことになります
 
 .exhibit-footer
   .exhibit-footer__text
@@ -134,7 +220,7 @@
           = link_to '特定商取引に関する表記', '#', class: 'exhibit-footer-link'
   
   .exhibit-footer__logo
-    = link_to '#', class: 'footer-logo' do
+    = link_to '/', class: 'footer-logo' do
       = image_tag asset_path("logo/logo-white.png"), class: 'footer-logo'
   .exhibit-footer__appname
     %p.exhibit-last @FURIMA
