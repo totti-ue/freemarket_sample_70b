@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
   describe "#new" do
 
     context 'can save' do
-      it "is valid with nickname, email, password, password_confirmation, family_name, family_name_kana, birthday" do
+      it "is valid with nickname, email, password, password_confirmation, last_name, first_name, last_name_kana, first_name_kana, birthday" do
         expect(build(:user, avatar: nil, profile: nil, phone_number: nil, sex: nil)).to be_valid
       end
 
@@ -39,16 +39,52 @@ RSpec.describe User, type: :model do
         expect(user.errors[:password_confirmation]).to include("doesn't match Password")
       end
 
-      it "is invalid without family_name" do
-        user = build(:user, family_name: nil)
+      it "is invalid without last_name" do
+        user = build(:user, last_name: nil)
         user.valid?
-        expect(user.errors[:family_name]).to include("can't be blank")
+        expect(user.errors[:last_name]).to include("can't be blank")
       end
 
-      it "is invalid without family_name_kana" do
-        user = build(:user, family_name_kana: nil)
+      it "is invalid with a last_name that does not have ZENKAKU moji" do
+        user = build(:user, last_name: "ｶｱｻﾝ")
         user.valid?
-        expect(user.errors[:family_name_kana]).to include("can't be blank")
+        expect(user.errors[:last_name]).to include("is invalid")
+      end
+
+      it "is invalid without first_name" do
+        user = build(:user, first_name: nil)
+        user.valid?
+        expect(user.errors[:first_name]).to include("can't be blank")
+      end
+
+      it "is invalid with a first_name that does not have ZENKAKU moji" do
+        user = build(:user, first_name: "ﾄｵｻﾝ")
+        user.valid?
+        expect(user.errors[:first_name]).to include("is invalid")
+      end
+
+      it "is invalid without last_name_kana" do
+        user = build(:user, last_name_kana: nil)
+        user.valid?
+        expect(user.errors[:last_name_kana]).to include("can't be blank")
+      end
+
+      it "is invalid with a last_name_kana that does not have ZENKAKU moji" do
+        user = build(:user, last_name_kana: "ｶｱｻﾝ")
+        user.valid?
+        expect(user.errors[:last_name_kana]).to include("is invalid")
+      end
+
+      it "is invalid without first_name_kana" do
+        user = build(:user, first_name_kana: nil)
+        user.valid?
+        expect(user.errors[:first_name_kana]).to include("can't be blank")
+      end
+
+      it "is invalid with a first_name_kana that does not have ZENKAKU moji" do
+        user = build(:user, first_name_kana: "ﾄｵｻﾝ")
+        user.valid?
+        expect(user.errors[:first_name_kana]).to include("is invalid")
       end
 
       it "is invalid without birthday" do
@@ -68,6 +104,21 @@ RSpec.describe User, type: :model do
         user.invalid?
         expect(user.errors[:email]).to include("is invalid")
       end
+
+
+      it "is invalid with a dupulicate nickname" do
+        user = create(:user, nickname: "Brother")
+        another_user = build(:user, nickname: "Brother")
+        another_user.valid?
+        expect(user.errors[:nickname]).to include("can't be blank")
+      end
+
+      it "is invalid without email" do
+        user = build(:user, email: nil)
+        user.valid?
+        expect(user.errors[:email]).to include("can't be blank")
+      end
+
 
     end
 
