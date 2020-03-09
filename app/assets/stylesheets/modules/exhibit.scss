@@ -240,6 +240,7 @@
           padding: 15px;
           border-radius: 4px;
           margin-left: 185px;
+          text-align: right;
         }
         .bold-text-price {
           margin: 10px 0px 0px 7px;
@@ -267,8 +268,6 @@
           font-size: 14px;
           margin-left: 19px;
         }
-        .simple-hyphen-up {
-        }
       }
       &__hyphen {
         border: solid 1px #efefef;
@@ -281,8 +280,6 @@
         .price-profit {
           font-size: 14px;
           margin-left: 19px;
-        }
-        .simple-hyphen-down {
         }
       }
       &__submit {

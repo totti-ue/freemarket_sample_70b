@@ -8,103 +8,103 @@
   .exhibit-box__main
     .exhibit-box__main__image
       .exhibit-box__main__image__text
-        %h6.bold-text 出品画像
-        %h6.require-text 必須
+        %h3.bold-text 出品画像
+        %p.require-text 必須
       .exhibit-box__main__image__description
-        %h6 最大10枚までアップロードできます
+        %p 最大10枚までアップロードできます
       .exhibit-box__main__image__form
         %input.input-area{placeholder: "クリックしてファイルをアップロード", type: "text", class: "form-area-image"}
     
     .exhibit-box__main__content
       .exhibit-box__main__content__namebox
         .exhibit-box__main__content__namebox__text
-          %h6.bold-text 商品名
-          %h6.require-text 必須
+          %h3.bold-text 商品名
+          %p.require-text 必須
         .exhibit-box__main__content__namebox__form
           %input.input-area{placeholder: "40文字まで", type: "text", class: "form-area-name"}
       .exhibit-box__main__content__namebox
         .exhibit-box__main__content__namebox__text
-          %h6.bold-text 商品の説明
-          %h6.require-text 必須
+          %h3.bold-text 商品の説明
+          %p.require-text 必須
         .exhibit-box__main__content__namebox__form
           %input.input-area{placeholder: "1,000文字まで（色、素材、重さ、定価、注意点など）", type: "text", class: "form-area-description"}
     
     .exhibit-box__main__details
       .exhibit-box__main__details__categorybox
-        %h6.item-details-title 商品の詳細
+        %h2.item-details-title 商品の詳細
         .exhibit-box__main__details__categorybox__text
-          %h6.bold-text カテゴリー
-          %h6.require-text 必須
+          %h3.bold-text カテゴリー
+          %p.require-text 必須
         .exhibit-box__main__details__categorybox__form
           %input.input-area{placeholder: "選択してください", type: "text", class: "form-area-category"}
       .exhibit-box__main__details__brandbox
         .exhibit-box__main__details__brandbox__text
-          %h6.bold-text ブランド
-          %h6.any-text 任意
+          %h3.bold-text ブランド
+          %p.any-text 任意
         .exhibit-box__main__details__brandbox__form
           %input.input-area{placeholder: "例） NIKE", type: "text", class: "form-area-brand"}
       .exhibit-box__main__details__statusbox
         .exhibit-box__main__details__statusbox__text
-          %h6.bold-text 商品の状態
-          %h6.require-text 必須
+          %h3.bold-text 商品の状態
+          %p.require-text 必須
         .exhibit-box__main__details__statusbox__form
           %input.input-area{placeholder: "選択してください", type: "text", class: "form-area-status"}
     
     .exhibit-box__main__delivery
       .exhibit-box__main__delivery__chargebox
-        %h6.item-delivery-title 配送について
+        %h2.item-delivery-title 配送について
         .exhibit-box__main__delivery__chargebox__text
-          %h6.bold-text 配送料の負担
-          %h6.require-text 必須
+          %h3.bold-text 配送料の負担
+          %p.require-text 必須
         .exhibit-box__main__delivery__chargebox__form
           %input.input-area{placeholder: "選択してください", type: "text", class: "form-area-charge"}
       .exhibit-box__main__delivery__originbox
         .exhibit-box__main__delivery__originbox__text
-          %h6.bold-text 配送元の地域
-          %h6.require-text 必須
+          %h3.bold-text 配送元の地域
+          %p.require-text 必須
         .exhibit-box__main__delivery__originbox__form
           %input.input-area{placeholder: "選択してください", type: "text", class: "form-area-origin"}
       .exhibit-box__main__delivery__sizebox
         .exhibit-box__main__delivery__sizebox__text
-          %h6.bold-text 配送物のサイズ
-          %h6.require-text 必須
+          %h3.bold-text 配送物のサイズ
+          %p.require-text 必須
         .exhibit-box__main__delivery__sizebox__form
           %input.input-area{placeholder: "選択してください", type: "text", class: "form-area-size"}
       .exhibit-box__main__delivery__methodbox
         .exhibit-box__main__delivery__methodbox__text
-          %h6.bold-text 配送の方法
-          %h6.require-text 必須
+          %h3.bold-text 配送の方法
+          %p.require-text 必須
         .exhibit-box__main__delivery__methodbox__form
           %input.input-area{placeholder: "選択してください", type: "text", class: "form-area-method"}
       .exhibit-box__main__delivery__indicationbox
         .exhibit-box__main__delivery__indicationbox__text
-          %h6.bold-text 配送までの日数
-          %h6.require-text 必須
+          %h3.bold-text 配送までの日数
+          %p.require-text 必須
         .exhibit-box__main__delivery__indicationbox__form
           %input.input-area{placeholder: "選択してください", type: "text", class: "form-area-indication"}
     
     .exhibit-box__main__under 
       .exhibit-box__main__under__range
-        %h6.price-range-title 価格 (¥300〜9,999,999)
+        %h2.price-range-title 価格 (¥300〜9,999,999)
       .exhibit-box__main__under__input
-        %h6.bold-text-price 販売価格
-        %h6.require-text-price 必須
-        %h6.dollar-mark￥
-        %input.input-area{placeholder: "                                                           0", type: "text", class: "form-area-price"}
+        %h3.bold-text-price 販売価格
+        %p.require-text-price 必須
+        %p.dollar-mark￥
+        %input.input-area{placeholder: "0", type: "text", class: "form-area-price"}
       .exhibit-box__main__under__commission
-        %h6.price-commission 販売手数料 (10%)
-        %h6.simple-hyphen-up ---
+        %h4.price-commission 販売手数料 (10%)
+        %p.simple-hyphen-up ---
       .exhibit-box__main__under__hyphen
       .exhibit-box__main__under__profit
-        %h6.price-profit 販売利益
-        %h6.simple-hyphen-down ---
+        %h4.price-profit 販売利益
+        %p.simple-hyphen-down ---
       .exhibit-box__main__under__submit
         .exhibit-box__main__under__submit--exhibit-btn
           = link_to '出品する', '#', class: 'exhibit-btn'
         .exhibit-box__main__under__submit--return-btn
           = link_to 'もどる', '#', class: 'return-btn'
       .exhibit-box__main__under__attention
-        %h6.under-attention
+        %p.under-attention
           禁止されている
           %span.action<>
             = link_to '行為', '#', class: 'attention-text'
@@ -137,4 +137,4 @@
     = link_to '#', class: 'footer-logo' do
       = image_tag asset_path("logo/logo-white.png"), class: 'footer-logo'
   .exhibit-footer__appname
-    %h6.exhibit-last @FURIMA
+    %p.exhibit-last @FURIMA
