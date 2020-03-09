@@ -14,13 +14,13 @@
         %button{ type: "submit", class: "login-bottom__btn" }
           = icon('fab', 'google')
           Googleでログイン
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = form_with(model: @user, url: user_session_path, local: true) do |f|
         .login-list__form
           .login-form__main
             .login-addres
-              %input.login-text{ value: "", name: "mail", placeholder: "メールアドレス", type: "email" }
+              = f.text_field :email, autofocus: true, placeholder: "メールアドレス", class: "login-text"
             .login-password
-              %input.login-text{ value: "", name: "password", placeholder: "パスワード", type: "password" }
+              = f.password_field :password, autocomplete: "off", placeholder: "パスワード", class: "login-text"
             .login-confirmation
               .login-confirmation__text
                 .login-confirmation__text--check
