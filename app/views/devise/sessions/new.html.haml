@@ -1,17 +1,46 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.sign-content
+  .sign-header
+    .login-header
+      = link_to image_tag('/assets/logo/logo.png'), root_path, class: "login-header__icon"
+  .sign-content__main
+    .login-list
+      .login-list__top
+        %p.login-list__top--text アカウントをお持ちでない方はこちら
+        = link_to "新規会員登録", new_user_registration_path, class: "login-list__top--btn"
+      .login-list__center
+        %button{ type: "submit", class: "login-top__btn" }
+          = icon('fab', 'facebook-square')
+          Fecebookでログイン
+        %button{ type: "submit", class: "login-bottom__btn" }
+          = icon('fab', 'google')
+          Googleでログイン
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .login-list__form
+          .login-form__main
+            .login-addres
+              %input.login-text{ value: "", name: "mail", placeholder: "メールアドレス", type: "email" }
+            .login-password
+              %input.login-text{ value: "", name: "password", placeholder: "パスワード", type: "password" }
+            .login-confirmation
+              .login-confirmation__text
+                .login-confirmation__text--check
+
+            %button{ type: "submit", class: "login-bottom__btn" } ログイン
+            = link_to "#", class: "right-btn" do
+              パスワードをお忘れの方
+
+  .sign
+    .sign-footer
+      .sign-footer__top
+        %ul.footer-top
+          %li.footer-top__left
+            = link_to "プライバシーポリシー", "#", class: "footer-top__left--text"
+          %li.footer-top__center
+            = link_to "フリマ利用規約", "#", class: "footer-top__left--text"
+          %li.footer-top__right
+            = link_to "特定商取引に関する表記", "#", class: "footer-top__left--text"
+      = link_to image_tag('/assets/logo/logo.png'), root_path, class: "sign-footer__center"
+      .sign-footer__bottom
+        %small.sign-footer__bottom--text © Furima, Inc.
+
+
