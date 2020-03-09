@@ -1,7 +1,7 @@
 .sign-content
   .sign-header
     .login-header
-      = link_to image_tag('/assets/logo/logo.png'), root_path, class: "login-header__icon"
+      = image_tag asset_path('logo/logo.png'), class: "sign-header__left--icon"
   .sign-content__main
     .login-list
       .login-list__top
@@ -39,7 +39,7 @@
             = link_to "フリマ利用規約", "#", class: "footer-top__left--text"
           %li.footer-top__right
             = link_to "特定商取引に関する表記", "#", class: "footer-top__left--text"
-      = link_to image_tag('/assets/logo/logo.png'), root_path, class: "sign-footer__center"
+      = image_tag asset_path('logo/logo.png'), class: "sign-footer__center"
       .sign-footer__bottom
         %small.sign-footer__bottom--text © Furima, Inc.
 
