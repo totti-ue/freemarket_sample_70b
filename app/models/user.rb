@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
+  has_many :addresses
 
   validates :nickname, presence: true
   validates :last_name, presence: true, format: { with: /[ぁ-んァ-ンａ-ｚＡ-Ｚ一-龥]+/ }
