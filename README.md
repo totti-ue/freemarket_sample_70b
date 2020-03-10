@@ -72,12 +72,12 @@ Things you may want to cover:
 |title|string|null: false|
 |text|text|null: false|
 |price|integer|null: false|
-|size|string|null: false|
 |status|integer|null: false|
 |delivery_charge|string|null: false|
 |delivery_method|string|null: false|
+|delivery_size|string|null: false|
 |delivery_origin|string|null: false|
-|indication|string|null: false|
+|delivery_days|string|null: false|
 |category|references|null: false, foreign_key: true|
 |brand|references|foreign_key: true|
 |history|references|foreign_key: true|
