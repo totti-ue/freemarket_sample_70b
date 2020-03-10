@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :user do
-    password = Faker::Internet.password(min_length: 6)
+    password = Faker::Internet.password(min_length: 7)
     nickname                {Faker::JapaneseMedia::DragonBall.character}
     email                   {Faker::Internet.email}
     password                {password}
@@ -12,7 +12,6 @@ FactoryBot.define do
     birthday                {Faker::Date.birthday}
     avatar                  {"sample.png"}
     profile                 {"こんにちは。私は安倍晋三です"}
-    phone_number            {Faker::PhoneNumber.cell_phone}
     sex                     {"0"}
   end
 end
