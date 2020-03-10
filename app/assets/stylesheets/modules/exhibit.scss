@@ -50,7 +50,9 @@
             border: 2px solid $main-color;
             outline: 0;
             }
-          
+          .upload-message {
+            color: lightslategray;
+          }
         }
       }
     }
@@ -474,3 +476,6 @@
   }
 }
 
+.mask {
+  display: none;
+}
