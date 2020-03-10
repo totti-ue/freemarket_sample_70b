@@ -13,7 +13,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :delivery_days,    null: false
       t.integer :price,           null: false
       t.references :history
-      t.references :saler,        null: false
+      t.references :saler
       t.references :buyer
       t.timestamps
     end
