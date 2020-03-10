@@ -1,6 +1,20 @@
 class UsersController < ApplicationController
 
+  def new
+  end
+
+
+  def create
+    params[:user][:birthday] 
+    @user = User.new(user_params)
+  end
+
   def show
   end
+  
+ private 
+   def user_params
+     params.require(:user).permit(:birthday)
+   end
 
 end

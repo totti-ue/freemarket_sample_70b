@@ -98,6 +98,6 @@
         %p.nav-destination 電話番号の確認
         = icon('fas', 'chevron-right', class: 'nav-icon')
     %li.nav-list
-      = link_to "destroy_user_session_path", method: :delete, class: "user-links" do
+      = link_to destroy_user_session_path, method: :delete, class: "user-links" do
         %p.nav-destination ログアウト
         = icon('fas', 'chevron-right', class: 'nav-icon')
