@@ -13,7 +13,6 @@
   }
 }
 
-
 .exhibit-box {
   background-color: #f8f8f8;
   height: auto;
@@ -32,6 +31,9 @@
       &__description {
         float: left;
         font-size: 14px;
+        .image-guide {
+          margin-left: 10px;
+        }
       }
       &__form {
         width: 100%;
@@ -44,6 +46,13 @@
           border-width: 1px;
           border-style: dashed;
           border-color: rgb(204, 204, 204);
+          &:focus {
+            border: 2px solid $main-color;
+            outline: 0;
+            }
+          .upload-message {
+            color: lightslategray;
+          }
         }
       }
     }
@@ -62,11 +71,21 @@
           width: 100%;
           padding: 15px;
           border-radius: 4px;
+          border: 1px solid lightslategray;
+          &:focus {
+            border: 2px solid $main-color;
+            outline: 0;
+            }
         }
         .form-area-description {
           width: 100%;
           padding: 60px 15px;
           border-radius: 4px;
+          border: 1px solid lightslategray;
+          &:focus {
+            border: 2px solid $main-color;
+            outline: 0;
+            }
         }
       }
       }
@@ -90,8 +109,12 @@
           display: flex;
           .form-area-category {
             width: 100%;
-            padding: 15px;
-            border-radius: 4px;
+            height: 50px;
+            background-color: white;
+            &:focus {
+            border: 2px solid $main-color;
+            outline: 0;
+            }
           }
         }
       }
@@ -106,10 +129,17 @@
             width: 100%;
             padding: 15px;
             border-radius: 4px;
+            border: 1px solid lightslategray;
+            &:focus {
+              border: 2px solid $main-color;
+              outline: 0;
+              }
           }
         }
       }
       &__statusbox {
+        font-size: 14px;
+        font-weight: bold;
         &__text {
           display: flex;
         }
@@ -118,8 +148,13 @@
           display: flex;
           .form-area-status {
             width: 100%;
-            padding: 15px;
-            border-radius: 4px;
+            height: 50px;
+            background-color: white;
+            border: 1px solid lightslategray;
+            &:focus {
+            border: 2px solid $main-color;
+            outline: 0;
+            }
           }
         }
       }
@@ -143,8 +178,13 @@
           display: flex;
           .form-area-charge {
             width: 100%;
-            padding: 15px;
-            border-radius: 4px;
+            height: 50px;
+            background-color: white;
+            border: 1px solid lightslategray;
+            &:focus {
+            border: 2px solid $main-color;
+            outline: 0;
+            }
           }
         }
       }
@@ -159,8 +199,13 @@
           display: flex;
           .form-area-origin {
             width: 100%;
-            padding: 15px;
-            border-radius: 4px;
+            height: 50px;
+            background-color: white;
+            border: 1px solid lightslategray;
+            &:focus {
+            border: 2px solid $main-color;
+            outline: 0;
+            }
           }
         }
       }
@@ -175,8 +220,13 @@
           display: flex;
           .form-area-size {
             width: 100%;
-            padding: 15px;
-            border-radius: 4px;
+            height: 50px;
+            background-color: white;
+            border: 1px solid lightslategray;
+            &:focus {
+            border: 2px solid $main-color;
+            outline: 0;
+            }
           }
         }
       }
@@ -191,8 +241,13 @@
           display: flex;
           .form-area-method {
             width: 100%;
-            padding: 15px;
-            border-radius: 4px;
+            height: 50px;
+            background-color: white;
+            border: 1px solid lightslategray;
+            &:focus {
+            border: 2px solid $main-color;
+            outline: 0;
+            }
           }
         }
       }
@@ -207,8 +262,13 @@
           display: flex;
           .form-area-indication {
             width: 100%;
-            padding: 15px;
-            border-radius: 4px;
+            height: 50px;
+            background-color: white;
+            border: 1px solid lightslategray;
+            &:focus {
+            border: 2px solid $main-color;
+            outline: 0;
+            }
           }
         }
       }
@@ -241,6 +301,11 @@
           border-radius: 4px;
           margin-left: 185px;
           text-align: right;
+          border: 1px solid lightslategray;
+          &:focus {
+            border: 2px solid $main-color;
+            outline: 0;
+            }
         }
         .bold-text-price {
           margin: 10px 0px 0px 7px;
@@ -287,7 +352,7 @@
         &--exhibit-btn {
           margin: 50px 50px;
           .exhibit-btn {
-            background-color: #ea352d;
+            background-color: $main-color;
             color: white;
             font-weight: bold;
             font-size: 17px;
@@ -296,7 +361,7 @@
             padding: 14px 140px;
             text-decoration: none;
             &:hover {
-              background: #CC0000;
+              background: #009999;
             }
           }
         }
@@ -349,6 +414,7 @@
   line-height: 18px;
   border-radius: 2px;
   text-align: center;
+  padding: 1px 3px;
 }
 
 .any-text {
@@ -410,3 +476,6 @@
   }
 }
 
+.mask {
+  display: none;
+}
