@@ -18,19 +18,19 @@
       %ul.header-container__nav--list-right
         - if user_signed_in? 
           %li.likes
-            = link_to user_path, class:"link" do
+            = link_to user_path(current_user.id), class:"link" do
               = icon('far', 'heart', class: "header-icon")
               %p いいね！一覧
           %li.notification
-            = link_to user_path, class:"link" do
+            = link_to user_path(current_user.id), class:"link" do
               = icon('far', 'bell', class: "header-icon")
               %p お知らせ
           %li.to-do-list
-            = link_to user_path, class:"link" do
+            = link_to user_path(current_user.id), class:"link" do
               = icon('fas', 'check', class: "header-icon")
               %p やることリスト
           %li.mypage
-            = link_to user_path, class:"link" do
+            = link_to user_path(current_user.id), class:"link" do
               .avatar-icon
               %p マイページ
         - else
