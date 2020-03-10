@@ -1,18 +1,3 @@
--# %h2 住所情報登録
--# = form_for @address do |f|
--#   = render "devise/shared/error_messages", resource: @address
--#   .field
--#     = f.label :last_name
--#     %br/
--#     = f.text_field :phone_number
--#   .field
--#     = f.label :phone_number
--#     %br/
--#     = f.text_field :phone_number
--#   .actions
--#     = f.submit "Sign up"
--# = render "devise/shared/links"
-
 .sign-content
   .sign-header
     .sign-header__left
@@ -54,7 +39,7 @@
         .new_user__main
           .main-first
             = f.label :"都道府県", class: "main-name"
-            %p.require-text 必須
+            %span.require-text 必須
           .exhibit-box__main__delivery__originbox__form
             = f.select :prefecture , class: "form-area-origin" do
               %option{ value: ""} 選択してください
@@ -123,7 +108,6 @@
         .new_user__main
           .main-first
             = f.label :"電話番号", class: "main-name"
-            %span.require-text 必須
           = f.text_field :phone_number, autofocus: true, placeholder: "", class: "main-name"
         = f.submit "次へ進む", class: 'main-bottom__btn'
           
