@@ -34,8 +34,6 @@ Things you may want to cover:
 |birthday|string|null: false|
 |avatar|text||
 |profile|text||
-|address|string||
-|phone_number|string||
 |sex|string||
 
 ### Association
@@ -46,6 +44,27 @@ Things you may want to cover:
 - has_many :likes
 - has_many :bookmarks
 - has_many :points
+- has_many :addresses
+
+## addresses
+|Column|Type|Options|
+|------|----|-------|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|last_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|phone_number|string||
+|post_code|string|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|block|string|null: false|
+|building|string||
+|user|references|foreign_key: true|
+
+
+### Association
+- belongs_to :user
+
 
 ## items
 |Column|Type|Options|
