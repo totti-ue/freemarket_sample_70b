@@ -6,24 +6,24 @@
 
 .exhibit-box
   .exhibit-box__main
-    = form_with(model: @items, class: "form-boxs", local: true) do |f|
-      .exhibit-box__main__image
-        .exhibit-box__main__image__text
-          %h3.bold-text 出品画像
-          %p.require-text 必須
-        .exhibit-box__main__image__description
-          %p.image-guide 最大10枚までアップロードできます
-        .exhibit-box__main__image__form
-          = f.label :image, class: 'form-area-image'  do
-            %span.upload-message クリックしてファイルをアップロード
-            = f.file_field :image, class: 'form-area-image-file mask'  
+    = form_with(model: @item, local: true, class: "form-boxs") do |f|
+      -# .exhibit-box__main__image
+      -#   .exhibit-box__main__image__text
+      -#     %h3.bold-text 出品画像
+      -#     %p.require-text 必須
+      -#   .exhibit-box__main__image__description
+      -#     %p.image-guide 最大10枚までアップロードできます
+      -#   .exhibit-box__main__image__form
+      -#     = f.label :image, class: 'form-area-image'  do
+      -#       %span.upload-message クリックしてファイルをアップロード
+      -#       = f.file_field :image, class: 'form-area-image-file mask'  
       .exhibit-box__main__content
         .exhibit-box__main__content__namebox
           .exhibit-box__main__content__namebox__text
             %h3.bold-text 商品名
             %p.require-text 必須
           .exhibit-box__main__content__namebox__form
-            = f.text_field :text, placeholder: "40文字まで", maxlength: "40", class: "form-area-name"
+            = f.text_field :title, placeholder: "40文字まで", maxlength: "40", class: "form-area-name"
         .exhibit-box__main__content__namebox
           .exhibit-box__main__content__namebox__text
             %h3.bold-text 商品の説明
@@ -58,7 +58,7 @@
             %h3.bold-text ブランド
             %p.any-text 任意
           .exhibit-box__main__details__brandbox__form
-            = f.text_field :text, placeholder: "例） NIKE", class: "form-area-brand"
+            = f.text_field :brand_id, placeholder: "例） NIKE", class: "form-area-brand"
         .exhibit-box__main__details__statusbox
           .exhibit-box__main__details__statusbox__text
             %h3.bold-text 商品の状態
@@ -177,7 +177,7 @@
           %h3.bold-text-price 販売価格
           %p.require-text-price 必須
           %p.dollar-mark￥
-          = f.text_field :text, placeholder: "0", class: "form-area-price"
+          = f.text_field :price, placeholder: "0", class: "form-area-price"
         .exhibit-box__main__under__commission
           %h4.price-commission 販売手数料 (10%)
           %p.simple-hyphen-up ---
