@@ -3,45 +3,45 @@
     .sign-header__left
       = image_tag asset_path('logo/logo.png'), class: "sign-header__left--icon"
     .sign-header__right
-      %ul.active
-        %li.active__left
+      %ul.address-active
+        %li.address-active__left
           会員情報
           .status
-        %li.active__center
-          電話番号認識
+        %li.address-active__center
+          発送元住所登録
           .status
-        %li.active__right
+        %li.address-active__right
           完了
           .status
 
   .sign-content__main
     .sign-content__main--list
-      %h1.content-top 会員情報入力
+      %h1.content-top 発送元住所登録
       = form_with(model: @address, url: addresses_path, id: 'new_user', class: 'new_user', local: true) do |f|
         = render "devise/shared/error_messages", resource: @address
         .new_user__main
           .main-first
             = f.label :"お名前(全角)", class: "main-name"
             %span.require-text 必須
-          = f.text_field :last_name, autofocus: true, placeholder: "例) 山田", class: "main-name"
-          = f.text_field :first_name, autofocus: true, placeholder: "例) 彩", class: "main-name"
-        .new_user__main
+          = f.text_field :last_name, autofocus: true, placeholder: "例) 山田", class:  "main-text__left"
+          = f.text_field :first_name, autofocus: true, placeholder: "例) 彩", class: "main-text__right"
+        .new_user__address
           .main-first
             = f.label :"お名前カナ(全角)", class: "main-name"
             %span.require-text 必須
-          = f.text_field :last_name_kana, autofocus: true, placeholder: "例) ヤマダ", class: "main-name"
-          = f.text_field :first_name_kana, autofocus: true, placeholder: "例) アヤ", class: "main-name"
-        .new_user__main
+          = f.text_field :last_name_kana, autofocus: true, placeholder: "例) ヤマダ", class: "main-text__left"
+          = f.text_field :first_name_kana, autofocus: true, placeholder: "例) アヤ", class: "main-text__right"
+        .new_user__address
           .main-first
             = f.label :"郵便番号", class: "main-name"
             %span.require-text 必須
-          = f.text_field :post_code, autofocus: true, placeholder: "", class: "main-name"
-        .new_user__main
+          = f.text_field :post_code, autofocus: true, placeholder: "", class: "main-text"
+        .new_user__address
           .main-first
             = f.label :"都道府県", class: "main-name"
             %span.require-text 必須
           .exhibit-box__main__delivery__originbox__form
-            = f.select :prefecture , class: "form-area-origin" do
+            = f.select :prefecture , [], {}, class: "main-text" do
               %option{ value: ""} 選択してください
               %option{ value: "1"} 北海道
               %option{ value: "2"} 青森県
@@ -90,26 +90,29 @@
               %option{ value: "45"} 宮崎県
               %option{ value: "46"} 鹿児島県
               %option{ value: "47"} 沖縄県
-        .new_user__main
+        .new_user__address
           .main-first
             = f.label :"市町村", class: "main-name"
             %span.require-text 必須
-          = f.text_field :city, autofocus: true, placeholder: "", class: "main-name"
-        .new_user__main
+          = f.text_field :city, autofocus: true, placeholder: "", class: "main-text"
+        .new_user__address
           .main-first
             = f.label :"番地", class: "main-name"
             %span.require-text 必須
-          = f.text_field :block, autofocus: true, placeholder: "", class: "main-name"
-        .new_user__main
+          = f.text_field :block, autofocus: true, placeholder: "", class: "main-text"
+        .new_user__address
           .main-first
             = f.label :"建物名", class: "main-name"
-            %span.require-text 必須
-          = f.text_field :building, autofocus: true, placeholder: "", class: "main-name"
-        .new_user__main
+          = f.text_field :building, autofocus: true, placeholder: "", class: "main-text"
+        .new_user__address
           .main-first
             = f.label :"電話番号", class: "main-name"
-          = f.text_field :phone_number, autofocus: true, placeholder: "", class: "main-name"
-        = f.submit "次へ進む", class: 'main-bottom__btn'
+            %span.any-text 任意
+          = f.text_field :phone_number, autofocus: true, placeholder: "", class: "main-text"
+        .main-bottom
+          .main-bottom__text
+            %p.main-bottom__text--center
+          = f.submit "次へ進む", class: 'main-bottom__btn'
           
                 
           
