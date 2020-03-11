@@ -159,11 +159,11 @@
               %option{ value: "2"} クロネコヤマト
               %option{ value: "3"} ゆうパック
               %option{ value: "4"} ゆうメール
-        .exhibit-box__main__delivery__delivery-daysbox
-          .exhibit-box__main__delivery__delivery-daysbox__text
+        .exhibit-box__main__delivery__delivery-days-box
+          .exhibit-box__main__delivery__delivery-days-box__text
             %h3.bold-text 配送までの日数
             %p.require-text 必須
-          .exhibit-box__main__delivery__delivery-daysbox__form
+          .exhibit-box__main__delivery__delivery-days-box__form
             = f.select :delivery_days, [], {}, class: "item-select-form" do
               %option{ value: ""} 選択してください
               %option{ value: "1"} 1~2日で発送

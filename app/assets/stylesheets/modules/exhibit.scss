@@ -73,30 +73,30 @@
         &__text {
           display: flex;
         }
-      &__form {
-        width: 100%;
-        display: flex;
-        .form-area-name {
+        &__form {
           width: 100%;
-          padding: 15px;
-          border-radius: 4px;
-          border: 1px solid lightslategray;
-          &:focus {
-            border: 2px solid $main-color;
-            outline: 0;
+          display: flex;
+          .form-area-name {
+            width: 100%;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid lightslategray;
+            &:focus {
+              border: 2px solid $main-color;
+              outline: 0;
+            }
+          }
+          .form-area-description {
+            width: 100%;
+            padding: 60px 15px;
+            border-radius: 4px;
+            border: 1px solid lightslategray;
+            &:focus {
+              border: 2px solid $main-color;
+              outline: 0;
+            }
           }
         }
-        .form-area-description {
-          width: 100%;
-          padding: 60px 15px;
-          border-radius: 4px;
-          border: 1px solid lightslategray;
-          &:focus {
-            border: 2px solid $main-color;
-            outline: 0;
-          }
-        }
-      }
       }
     }
     &__details {
@@ -201,7 +201,7 @@
           display: flex;
         }
       }
-      &__delivery-daysbox {
+      &__delivery-days-box {
         font-size: 14px;
         font-weight: bold;
         &__text {
