@@ -6,7 +6,7 @@
         -# アバターアイコン
       .header__user-name
         %p
-          hoge
+          = current_user.nickname
       .header__info
         .header__info--assessment
           %p.title 評価
@@ -23,30 +23,30 @@
       = link_to user_path, class: "tab-link" do
         やることリスト
 
-  %ul.notifivation-container
+  %ul.notification-container
     -# - notice.each do |i|
-    %li.notifivation-container__list.first-list
-      = link_to "user_path", class: "notice-links top-link" do
+    %li.notification-container__list.first-list
+      = link_to user_path, class: "notice-links top-link" do
         .logo-box
           = image_tag asset_path('logo/box-logo.png'), height: '100%', width: '100%', class: 'logo'
         %p.message
           事務局から個別メッセージ「登録完了のお知らせ」
         = icon('fas', 'chevron-right', class: 'nav-icon')
-    %li.notifivation-container__list
+    %li.notification-container__list
       = link_to "user_path", class: "notice-links" do
         .logo-box
           = image_tag asset_path('logo/box-logo.png'), height: '100%', width: '100%', class: 'logo'
         %p.message
           事務局から個別メッセージ「パスワード再設定のお願い」
         = icon('fas', 'chevron-right', class: 'nav-icon')
-    %li.notifivation-container__list
+    %li.notification-container__list
       = link_to "user_path", class: "notice-links" do
         .logo-box
           = image_tag asset_path('logo/box-logo.png'), height: '100%', width: '100%', class: 'logo'
         %p.message
           事務局から個別メッセージ「出品商品にコメントされました」
         = icon('fas', 'chevron-right', class: 'nav-icon')
-    %li.notifivation-container__submit
+    %li.notification-container__submit
       = link_to "一覧を見る", "user_path", class: "notice-links all-list"
 
   %p.transaction
