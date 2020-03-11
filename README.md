@@ -99,11 +99,8 @@ Things you may want to cover:
 ## cards
 |Column|Type|Options|
 |------|----|-------|
-|number|integer|null: false|
-|name|string|null: false|
-|type|string|null: false|
-|expiration_date|integer|null: false|
-|security_code|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 |user|references|null: false, foreign_key: true｜
 
 ### Association
