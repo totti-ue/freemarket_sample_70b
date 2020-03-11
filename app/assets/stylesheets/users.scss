@@ -28,7 +28,7 @@
       margin: 0;
       font-size: 12px;
       &__left {
-        margin: 0 40px 0 0;
+        margin-right: 40px;
         font-weight: 600;
         color: $main-color;
         position: relative;
@@ -53,7 +53,7 @@
         }
       }
       &__center {
-        margin: 0 40px 0 0;
+        margin-right: 40px;
         color: #888;
         position: relative;
         .status {
@@ -493,10 +493,9 @@
 // 発送元住所登録
 .address-active {
   display: flex;
-  margin: 0;
   font-size: 12px;
   &__left {
-    margin: 0 40px 0 0;
+    margin-right: 40px;
     font-weight: 300;
     color: $main-color;
     position: relative;
@@ -521,7 +520,7 @@
     }
   }
   &__center {
-    margin: 0 40px 0 0;
+    margin-right: 40px;;
     font-weight: 600;
     color: $main-color;
     position: relative;
