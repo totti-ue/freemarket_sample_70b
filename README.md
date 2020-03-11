@@ -101,7 +101,7 @@ Things you may want to cover:
 |------|----|-------|
 |customer_id|string|null: false|
 |card_id|string|null: false|
-|user|references|null: false, foreign_key: true｜
+|user|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -110,7 +110,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |text|text||
-|user|references|null: false, foreign_key: true｜
+|user|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -119,8 +119,8 @@ Things you may want to cover:
 ## likes
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true｜
-|item|references|null: false, foreign_key: true｜
+|user|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -129,8 +129,8 @@ Things you may want to cover:
 ## bookmarks
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true｜
-|item|references|null: false, foreign_key: true｜
+|user|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -140,7 +140,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |point|integer||
-|user|references|null: false, foreign_key: true｜
+|user|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -150,8 +150,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
-|user|references|null: false, foreign_key: true｜
-|item|references|null: false, foreign_key: true｜
+|user|references|null: false, foreign_key: true|
+|item|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -161,7 +161,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|item|references|null: false, foreign_key: true｜
+|item|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -186,7 +186,7 @@ Things you may want to cover:
 ## histories
 |Column|Type|Options|
 |------|----|-------|
-|item|references|null: false, foreign_key: true｜
+|item|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item

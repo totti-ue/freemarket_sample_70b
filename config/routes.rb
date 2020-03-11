@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'cards/new'
-  get 'cards/show'
+  
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
