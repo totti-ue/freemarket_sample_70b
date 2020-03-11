@@ -111,12 +111,6 @@ RSpec.describe Address, type: :model do
         expect(address.errors[:post_code]).to include("は不正な値です")
       end
 
-      it "phone_numberは7桁じゃないと保存できない" do
-        address = build(:address, phone_number: nil, user: @user)
-        address.valid?
-        expect(address.errors[:phone_number]).to include("は不正な値です")
-      end
-
     end
 
   end
