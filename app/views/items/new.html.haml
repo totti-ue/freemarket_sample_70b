@@ -7,6 +7,12 @@
 .exhibit-box
   .exhibit-box__main
     = form_with(model: @item, local: true, class: "form-boxs") do |f|
+      #image-box
+        = f.fields_for :images do |i|
+          .js-file_group{data: {index: "#{i.index}"}}
+            = i.file_field :image, class: 'js-file'
+            %br
+            %span.js-remove 削除
       -# .exhibit-box__main__image
       -#   .exhibit-box__main__image__text
       -#     %h3.bold-text 出品画像

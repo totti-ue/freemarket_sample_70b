@@ -99,6 +99,11 @@
     .contents-text=link_to "アーカイバ", "#"
     
     .innerbox
+      -# = form_for @product do |f|
+      -#  = f.text_field :name br
+      -#  = f.number_field :price br
+      -#  = f.fields_for :images do |i|
+      -#  = i.file_field :src br
       .product
         = link_to "/", class: "a-link" do
           .product-img.p-img1
@@ -120,7 +125,7 @@
           .product-img.p-img2
           .product-body
             .product-name
-              product2
+              = @items.first.title
             .product-detail
               %ul.detail-lists
                 %li
