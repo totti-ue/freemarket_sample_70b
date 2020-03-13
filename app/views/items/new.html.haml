@@ -82,11 +82,7 @@
           .exhibit-box__main__delivery__chargebox__form
           = f.collection_select :delivery_charge_id, DeliveryCharge.all, :id, :charge, {prompt: "選択してください"}, class: "item-select-form"
         .exhibit-box__main__delivery__methodbox.delivery-method-area
-          -# .exhibit-box__main__delivery__methodbox__text
-          -#   %h3.bold-text 配送の方法
-          -#   %p.require-text 必須
-          -# .exhibit-box__main__delivery__methodbox__form
-            -# = f.collection_select :delivery_method_id, DeliveryMethod.all, :id, :name, {prompt: "選択してください"}, class: "item-select-form"
+          -# ------------------------jQueryにて挿入される部分------------------------------------
         .exhibit-box__main__delivery__originbox
           .exhibit-box__main__delivery__originbox__text
             %h3.bold-text 配送元の地域
