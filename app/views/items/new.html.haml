@@ -24,7 +24,7 @@
               
                   .input-area
                     .js-file_group{data: {index: "#{image.index}"}, type: "file"} 
-                      = image.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file", class: 'js-file'
+                      = image.file_field :image, style: "display:none", id:"img-file", class: 'js-file'
                       %label{for: "img-file"}
                         %i.fas.fa-camera
                       %br
