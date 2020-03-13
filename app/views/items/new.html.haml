@@ -7,16 +7,45 @@
 .exhibit-box
   .exhibit-box__main
     = form_with(model: @item, local: true, class: "form-boxs") do |f|
-      -# .exhibit-box__main__image
-      -#   .exhibit-box__main__image__text
-      -#     %h3.bold-text 出品画像
-      -#     %p.require-text 必須
-      -#   .exhibit-box__main__image__description
-      -#     %p.image-guide 最大10枚までアップロードできます
-      -#   .exhibit-box__main__image__form
-      -#     = f.label :image, class: 'form-area-image'  do
-      -#       %span.upload-message クリックしてファイルをアップロード
-      -#       = f.file_field :image, class: 'form-area-image-file mask'  
+      .exhibit-box__main__content
+        .exhibit-box__main__content__namebox
+          .exhibit-box__main__content__namebox__text
+            %h3.bold-text 出品画像
+            %p.require-text 必須
+            %span{style: "margin-left: 20px; padding-top: 8px"} ※最大10枚までアップロードできます
+          .exhibit-box__main__content__namebox__form
+            -# ↓l:30
+            #image-box
+              #previews
+                - if @item.persisted?
+                  - @item.images.each_with_index do |image, i|
+                    = image_tag asset_path("#{image.image.url}"), data: { index: i }, width: "100", height: "100"
+                = f.fields_for :images do |image|
+              
+                  .input-area
+                    .js-file_group{data: {index: "#{image.index}"}, type: "file"} 
+                      = image.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file", class: 'js-file'
+                      %label{for: "img-file"}
+                        %i.fas.fa-camera
+                      %br
+                      = link_to "", class: 'footer-logo'
+                      %span.js-remove 削除 
+
+                      
+                    - if @item.persisted?
+                      -# ↓l:28
+                      = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                  - if @item.persisted?
+                    .js-file_group{data: {index: "#{@item.images.count}"}}
+                      = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
+
+
+
+
+
+
+
+
       .exhibit-box__main__content
         .exhibit-box__main__content__namebox
           .exhibit-box__main__content__namebox__text

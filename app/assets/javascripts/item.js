@@ -19,7 +19,6 @@ $(document).ready(function(){
   }
 
 
-  var file_filed = $("input[type=file]");
 
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
@@ -39,6 +38,7 @@ $(document).ready(function(){
                   // ↓l
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
+
     } else {  // 新規画像追加の処理
       $('#previews').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
@@ -46,16 +46,9 @@ $(document).ready(function(){
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+
     }
   });
-
-
-    // fileIndexの先頭の数字を使ってinputを作る
-  //   $('#image-box').append(buildFileField(fileIndex[0]));
-  //   fileIndex.shift();
-  //   // 末尾の数に1足した数を追加する
-  //   fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
-  // });
 
 
 
