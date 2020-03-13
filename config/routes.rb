@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   root to: 'items#index'
 
-  resources :items, only: [:index, :new, :create]
+  resources :items, only: [:index, :new, :create, :edit, :update]
   resources :users, only: :show
   
     # do

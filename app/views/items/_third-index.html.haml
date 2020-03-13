@@ -44,54 +44,75 @@
 
 
     .innerbox
-      .product
-        = link_to "/", class: "a-link" do
-          .product-img.p-img1
-          .product-body
-            .product-name
-              product3
-            .product-detail
-              %ul.detail-lists
-                %li
-                  30000円
-                %li
-                  %i
-                    = icon( "fas", "star", class: "star-icon")
-                  0
-              %p.intax
-                (税込)
-      .product
-        = link_to "/", class: "a-link" do
-          .product-img.p-img2
-          .product-body
-            .product-name
-              product2
-            .product-detail
-              %ul.detail-lists
-                %li
-                  20000円
-                %li
-                  %i
-                    = icon( "fas", "star", class: "star-icon")
-                  0
-              %p.intax
-                (税込)
-      .product
-        = link_to "/", class: "a-link" do
-          .product-img.p-img3
-          .product-body
-            .product-name
-              product1
-            .product-detail
-              %ul.detail-lists
-                %li
-                  10000円
-                %li
-                  %i
-                    = icon( "fas", "star", class: "star-icon")
-                  0
-              %p.intax
-                (税込)
+      - if @items.count == 0
+        .product
+          = link_to "/", class: "a-link" do
+            = image_tag asset_path("pict/sample1.png"), class: "product-img"
+            .product-body
+              .product-name
+                sample1
+              .product-detail
+                %ul.detail-lists
+                  %li
+                    300000
+                  %li
+                    %i
+                      = icon( "fas", "star", class: "star-icon")
+                    0
+                %p.intax
+                  (税込)
+        .product
+          = link_to "/", class: "a-link" do
+            = image_tag asset_path("pict/sample1.png"), class: "product-img"
+            .product-body
+              .product-name
+                sample1
+              .product-detail
+                %ul.detail-lists
+                  %li
+                    300000
+                  %li
+                    %i
+                      = icon( "fas", "star", class: "star-icon")
+                    0
+                %p.intax
+                  (税込)
+        .product
+          = link_to "/", class: "a-link" do
+            = image_tag asset_path("pict/sample1.png"), class: "product-img"
+            .product-body
+              .product-name
+                sample1
+              .product-detail
+                %ul.detail-lists
+                  %li
+                    300000
+                  %li
+                    %i
+                      = icon( "fas", "star", class: "star-icon")
+                    0
+                %p.intax
+                  (税込)
+                  
+      - else
+
+        - @items.each do |i|
+          .product
+            = link_to "/", class: "a-link" do
+              = image_tag asset_path("#{i.images.first.image}"), class: "product-img"
+              .product-body
+                .product-name
+                  = i.title
+                .product-detail
+                  %ul.detail-lists
+                    %li
+                      = i.price
+                    %li
+                      %i
+                        = icon( "fas", "star", class: "star-icon")
+                      0
+                  %p.intax
+                    (税込)
 
   %section.section-fifth__contents
     .contents-theme
@@ -99,51 +120,72 @@
     .contents-text=link_to "アーカイバ", "#"
     
     .innerbox
-      .product
-        = link_to "/", class: "a-link" do
-          .product-img.p-img1
-          .product-body
-            .product-name
-              product3
-            .product-detail
-              %ul.detail-lists
-                %li
-                  30000円
-                %li
-                  %i
-                    = icon( "fas", "star", class: "star-icon")
-                  0
-              %p.intax
-                (税込)
-      .product
-        = link_to "/", class: "a-link" do
-          .product-img.p-img2
-          .product-body
-            .product-name
-              product2
-            .product-detail
-              %ul.detail-lists
-                %li
-                  20000円
-                %li
-                  %i
-                    = icon( "fas", "star", class: "star-icon")
-                  0
-              %p.intax
-                (税込)
-      .product
-        = link_to "/", class: "a-link" do
-          .product-img.p-img3
-          .product-body
-            .product-name
-              product1
-            .product-detail
-              %ul.detail-lists
-                %li
-                  10000円
-                %li
-                  %i
-                    = icon( "fas", "star", class: "star-icon")
-                  0
-              %p.intax
-                (税込)
+      - if @items.count == 0
+        .product
+          = link_to "/", class: "a-link" do
+            = image_tag asset_path("pict/sample1.png"), class: "product-img"
+            .product-body
+              .product-name
+                sample1
+              .product-detail
+                %ul.detail-lists
+                  %li
+                    300000
+                  %li
+                    %i
+                      = icon( "fas", "star", class: "star-icon")
+                    0
+                %p.intax
+                  (税込)
+        .product
+          = link_to "/", class: "a-link" do
+            = image_tag asset_path("pict/sample1.png"), class: "product-img"
+            .product-body
+              .product-name
+                sample1
+              .product-detail
+                %ul.detail-lists
+                  %li
+                    300000
+                  %li
+                    %i
+                      = icon( "fas", "star", class: "star-icon")
+                    0
+                %p.intax
+                  (税込)
+        .product
+          = link_to "/", class: "a-link" do
+            = image_tag asset_path("pict/sample1.png"), class: "product-img"
+            .product-body
+              .product-name
+                sample1
+              .product-detail
+                %ul.detail-lists
+                  %li
+                    300000
+                  %li
+                    %i
+                      = icon( "fas", "star", class: "star-icon")
+                    0
+                %p.intax
+                  (税込)
+                  
+      - else
+
+        - @items_old.each do |i|
+          .product
+            = link_to "/", class: "a-link" do
+              = image_tag asset_path("#{i.images.first.image}"), class: "product-img"
+              .product-body
+                .product-name
+                  = i.title
+                .product-detail
+                  %ul.detail-lists
+                    %li
+                      = i.price
+                    %li
+                      %i
+                        = icon( "fas", "star", class: "star-icon")
+                      0
+                  %p.intax
+                    (税込)

@@ -353,11 +353,8 @@ header {
           text-decoration: none;
           color: black;
           .product-img {
-            background-color: white;
             height: 150px;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
+            width: 100%;
           }
           .p-img1 {
             background-image: image-url("pict/sample1.png");
