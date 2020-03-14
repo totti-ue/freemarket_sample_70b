@@ -98,7 +98,7 @@
 
         - @items.each do |i|
           .product
-            = link_to "/", class: "a-link" do
+            = link_to "/items/#{i.id}", class: "a-link" do
               = image_tag asset_path("#{i.images.first.image}"), class: "product-img"
               .product-body
                 .product-name
