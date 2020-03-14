@@ -1,0 +1,86 @@
+= render "header"
+
+= @item.title
+
+%br
+- @item.images.each do |i|
+  = image_tag asset_path("#{i.image}")
+
+%br
+%span 出品者
+= @item.seller.nickname
+
+%br
+%span カテゴリー
+= @item.category_id
+
+%br
+%span ブランド
+= @item.category_id
+
+%br
+%span 商品の状態
+- if @item.status == "1"
+  新品、未使用
+- elsif @item.status == "2"
+  未使用に近い
+- elsif @item.status == "3"
+  目立った傷や汚れなし
+- elsif @item.status == "4"
+  やや傷や汚れあり
+- elsif @item.status == "5"
+  傷や汚れあり
+- else @item.status == "6"
+  全体的に状態が悪い
+
+%br
+%span 配送料の負担
+= @item.delivery_charge.charge
+
+%br
+%span 配送の方法
+= @item.delivery_method.name
+
+%br
+%span 配送元地域
+= @item.delivery_origin.name
+
+%br
+%span 配送の目安
+- if @item.delivery_days == "1"
+  1~2日で発送
+- elsif @item.delivery_days == "2"
+  2~3日で発送
+- else
+  4~7日で発送
+
+
+%br
+%span 配送サイズ
+- if @item.delivery_size == "1"
+  ネコポス（A4サイズ・厚さ2.5cm以内）
+- elsif @item.delivery_size == "2"
+  宅急便コンパクト
+- else
+  宅急便（60~160サイズ）
+
+%br
+%span ¥
+= "#{@item.price}" + '(税込)送料込み'
+
+%br
+%span
+= @item.text
+
+- if @item.seller_id == current_user.id 
+  = link_to edit_item_path, class: "edit-btn" do
+    %span.edit-btn__text 編集する
+  = link_to item_path, method: :delete, class: "destroy-btn" do
+    %span.destroy-btn__text 削除する
+- else 
+  = link_to root_path, class: "buyer" do
+    %span 購入画面に進む
+
+= link_to "トップへ戻る", root_path
+
+
