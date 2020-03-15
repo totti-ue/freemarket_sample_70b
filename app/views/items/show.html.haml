@@ -1,86 +1,173 @@
-= render "header"
+.top
+  = render "header"
+  .items-show-top
+    = link_to "FURIMA", "#", class: "toppage-link hover-green"
+    %i.fa.fa-angle-right
+    = link_to "カテゴリー（ancestry）", "#", class: "category-link hover-green"
+    %i.fa.fa-angle-right
+    = link_to "カテゴリー（parent）", "#", class: "category-link hover-green"
+    %i.fa.fa-angle-right
+    = link_to "カテゴリー（childre）", "#", class: "category-link hover-green"
+    %i.fa.fa-angle-right
+    %span.category-link.category-item
+      カテゴリー（item）
+    
+  .items-show-main
+    .items-show-main__wrapper
+      .items-contents-box
+        -# ①タイトル
+        %h2.item-title
+          = @item.title
+        -# ②イメージ
+        = image_tag asset_path("#{@item.images.first.image}"), class: "item-main-img"
+        -# ③イメージ（他）
+        %ul.item-other-imgs
+          - @item.images.each do |i|
+            %li.other-img-list
+              = image_tag asset_path("#{i.image}"), class: "other-img-list"
+        -# ④プライス
+        .item-price-box
+          %p.item-price
+            = "¥#{@item.price}"
+          %span
+            （税込）送料込み
+        -# ⑤テキスト
+        .item-text-contents
+          = @item.text
+        -# ⑥item詳細（表）
+        .item-show-table
+          %table.item-details
+            %tbody
+              -# ⑥-a出品者
+              %tr
+                %th.table-head-left
+                  出品者
+                %td.table-data-right
+                  = @item.seller.nickname
+              -# ⑥-bカテゴリー
+              %tr
+                %th.table-head-left
+                  カテゴリー
+                %td.table-data-right
+                  = link_to "#", class: "item-data-link" do
+                    = @item.category_id
+              -# ⑥-cブランド
+              %tr
+                %th.table-head-left
+                  ブランド
+                %td.table-data-right
+                  = @item.category_id
+              -# ⑥-d商品サイズ
+              %tr
+                %th.table-head-left
+                  配送サイズ
+                %td.table-data-right
+                  - if @item.delivery_size == "1"
+                    ネコポス（A4サイズ・厚さ2.5cm以内）
+                  - elsif @item.delivery_size == "2"
+                    宅急便コンパクト
+                  - else
+                    宅急便（60~160サイズ）
+              -# ⑥-e商品の状態
+              %tr
+                %th.table-head-left
+                  商品の状態
+                %td.table-data-right
+                  - if @item.status == "1"
+                    新品、未使用
+                  - elsif @item.status == "2"
+                    未使用に近い
+                  - elsif @item.status == "3"
+                    目立った傷や汚れなし
+                  - elsif @item.status == "4"
+                    やや傷や汚れあり
+                  - elsif @item.status == "5"
+                    傷や汚れあり
+                  - else @item.status == "6"
+                    全体的に状態が悪い
+              -# ⑥-f配送料
+              %tr
+                %th.table-head-left
+                  配送料の負担
+                %td.table-data-right
+                  = @item.delivery_charge.charge
+              -# ⑥-g発送元地域
+              %tr
+                %th.table-head-left
+                  配送元地域
+                %td.table-data-right
+                  = link_to "#", class: "item-data-link" do
+                    = @item.delivery_origin.name  
+              -# ⑥-h発送日目安
+              %tr
+                %th.table-head-left
+                  配送の目安
+                %td.table-data-right
+                  - if @item.delivery_days == "1"
+                    1~2日で発送
+                  - elsif @item.delivery_days == "2"
+                    2~3日で発送
+                  - else
+                    4~7日で発送
+              -# ⬇ 追加で記載する場合は必要 ⬇
+              -# %tr
+              -#   %th.table-head-left
+              -#     配送の方法
+              -#   %td.table-data-right
+              -#     = @item.delivery_method.name
+        .item-options
+          = link_to "#", class: "option-link register-favorites" do
+            %i.fa.fa-star
+            お気に入り
+            0
+          = link_to "#", class: "option-link send-report" do
+            %i.fa.fa-flag
+            不適切な商品の通報
 
-= @item.title
-
-%br
-- @item.images.each do |i|
-  = image_tag asset_path("#{i.image}")
-
-%br
-%span 出品者
-= @item.seller.nickname
-
-%br
-%span カテゴリー
-= @item.category_id
-
-%br
-%span ブランド
-= @item.category_id
-
-%br
-%span 商品の状態
-- if @item.status == "1"
-  新品、未使用
-- elsif @item.status == "2"
-  未使用に近い
-- elsif @item.status == "3"
-  目立った傷や汚れなし
-- elsif @item.status == "4"
-  やや傷や汚れあり
-- elsif @item.status == "5"
-  傷や汚れあり
-- else @item.status == "6"
-  全体的に状態が悪い
-
-%br
-%span 配送料の負担
-= @item.delivery_charge.charge
-
-%br
-%span 配送の方法
-= @item.delivery_method.name
-
-%br
-%span 配送元地域
-= @item.delivery_origin.name
-
-%br
-%span 配送の目安
-- if @item.delivery_days == "1"
-  1~2日で発送
-- elsif @item.delivery_days == "2"
-  2~3日で発送
-- else
-  4~7日で発送
+        -# ⬇ 追加で記載する場合は必要 ⬇
+        -# - if @item.seller_id == current_user.id 
+        -#   = link_to edit_item_path, class: "edit-btn" do
+        -#     %span.edit-btn__text 編集する
+        -#   = link_to item_path, method: :delete, class: "destroy-btn" do
+        -#     %span.destroy-btn__text 削除する
+        -# - else 
+        -#   = link_to root_path, class: "buyer" do
+        -#     %span 購入画面に進む
 
 
-%br
-%span 配送サイズ
-- if @item.delivery_size == "1"
-  ネコポス（A4サイズ・厚さ2.5cm以内）
-- elsif @item.delivery_size == "2"
-  宅急便コンパクト
-- else
-  宅急便（60~160サイズ）
 
-%br
-%span ¥
-= "#{@item.price}" + '(税込)送料込み'
-
-%br
-%span
-= @item.text
-
-- if @item.seller_id == current_user.id 
-  = link_to edit_item_path, class: "edit-btn" do
-    %span.edit-btn__text 編集する
-  = link_to item_path, method: :delete, class: "destroy-btn" do
-    %span.destroy-btn__text 削除する
-- else 
-  = link_to root_path, class: "buyer" do
-    %span 購入画面に進む
-
-= link_to "トップへ戻る", root_path
+      .input-comment-form
+        = form_with(model: @post, local: true) do |f|
+          = f.text_area :text, class: "comment-form"
+          %p.comment-notion
+            相手のことを考え丁寧なコメントを心がけましょう。
+            %br
+            不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          = button_tag type: "submit", class: "comment-submit" do
+            %i.fa.fa-comment
+            コメントする
+          -# ⬇︎ form.submitを使う場合は必要 ⬇︎
+          -# = f.submit "コメントする", class: "comment-submit"
 
 
+
+      .other-items-links
+        = link_to "#", class: "color-deepskyblue" do
+          %i.fa.fa-angle-left
+          前の商品
+        = link_to "#", class: "color-deepskyblue" do
+          後ろの商品
+          %i.fa.fa-angle-right
+
+          
+
+      = link_to "", class: "category-show-link" do
+        (category)
+        をもっと見る
+      -# ⬇︎ 必要であれば以下追加 ⬇︎
+      -# = link_to "トップへ戻る", root_path
+
+  = render "fourth-index"
+  = render "footer"
+
+= render "push-icon"
