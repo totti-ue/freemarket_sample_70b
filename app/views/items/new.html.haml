@@ -117,7 +117,7 @@
             %h3.bold-text 配送元の地域
             %p.require-text 必須
           .exhibit-box__main__delivery__originbox__form
-            = f.collection_select :delivery_origin_id, DeliveryOrigin.all, :id, :name, {prompt: "選択してください"}, class: "item-select-form" do
+            = f.collection_select :delivery_origin_id, DeliveryOrigin.all, :id, :name, {prompt: "選択してください"}, class: "item-select-form"
         .exhibit-box__main__delivery__sizebox
           .exhibit-box__main__delivery__sizebox__text
             %h3.bold-text 配送物のサイズ
