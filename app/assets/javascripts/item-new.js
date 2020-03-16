@@ -9,7 +9,7 @@ $(function(){
         <p class="require-text">必須</p>
       </div>
       <div class="exhibit-box__main__delivery__methodbox__form">
-        <select class="item-select-form" name="item[delivery_method_id]" id="item_delivery_method_id"><option value="">選択してください</option>
+        <select class="item-select-form" name="item[delivery_method_id]" id="item_delivery_method_id" required><option value="">選択してください</option>
           <option value="1">未定</option>
           <option value="2">らくらくFURIMA便</option>
           <option value="3">ゆうメール</option>
@@ -29,7 +29,7 @@ $(function(){
         <p class="require-text">必須</p>
       </div>
       <div class="exhibit-box__main__delivery__methodbox__form">
-        <select class="item-select-form" name="item[delivery_method_id]" id="item_delivery_method_id"><option value="">選択してください</option>
+        <select class="item-select-form" name="item[delivery_method_id]" id="item_delivery_method_id" required><option value="">選択してください</option>
           <option value="1">未定</option>
           <option value="2">シロネコヤマト</option>
           <option value="3">ゆうメール</option>
