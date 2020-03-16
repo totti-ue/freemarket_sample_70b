@@ -392,12 +392,6 @@
 }
 
 .form-color {
-  // &:valid {
-  //   border: 1px solid lightslategray;
-  // }
-  // &:invalid {
-  //   border: 1px solid lightslategray;
-  // }
   &:focus {
     border: 2px solid $main-color;
     outline: 0;
