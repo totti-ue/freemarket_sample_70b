@@ -24,7 +24,7 @@
               
                   .input-area
                     .js-file_group{data: {index: "#{image.index}"}, type: "file"} 
-                      = image.file_field :image, style: "display:none", id:"img-file", class: 'js-file'
+                      = image.file_field :image, id:"img-file", class: 'js-file top-image-form', required: ""
                       %label{for: "img-file"}
                         %i.fas.fa-camera
                       %br
@@ -52,13 +52,14 @@
             %h3.bold-text 商品名
             %p.require-text 必須
           .exhibit-box__main__content__namebox__form
-            = f.text_field :title, placeholder: "40文字まで", maxlength: "40", class: "form-area-name"
+            = f.text_field :title,placeholder: "40文字まで", maxlength: "40", required: "", class: "form-area-name"
+
         .exhibit-box__main__content__namebox
           .exhibit-box__main__content__namebox__text
             %h3.bold-text 商品の説明
             %p.require-text 必須
           .exhibit-box__main__content__namebox__form
-            = f.text_area :text, placeholder: "1,000文字まで（色、素材、重さ、定価、注意点など）", maxlength: "1000", class: "form-area-description"
+            = f.text_area :text, placeholder: "1,000文字まで（色、素材、重さ、定価、注意点など）", maxlength: "1000", required: "", class: "form-area-description"
 
       .exhibit-box__main__details
         .exhibit-box__main__details__categorybox
@@ -67,8 +68,7 @@
             %h3.bold-text カテゴリー
             %p.require-text 必須
           .exhibit-box__main__details__categorybox__form
-            = f.select :category_id, [], {}, class: "item-select-form" do
-              %option{ value: ""} 選択してください
+            = f.select :category_id, [], {prompt: "選択してください"}, class: "item-select-form", required: "" do
               %option{ value: "1"} レディース
               %option{ value: "2"} メンズ
               %option{ value: "3"} ベビー・キッズ
@@ -93,8 +93,7 @@
             %h3.bold-text 商品の状態
             %p.require-text 必須
           .exhibit-box__main__details__statusbox__form
-            = f.select :status, [], {}, class: "item-select-form" do
-              %option{ value: ""} 選択してください
+            = f.select :status, [], {prompt: "選択してください"}, class: "item-select-form", required: "" do
               %option{ value: "1"} 新品、未使用
               %option{ value: "2"} 未使用に近い
               %option{ value: "3"} 目立った傷や汚れなし
@@ -109,7 +108,7 @@
             %h3.bold-text 配送料の負担
             %p.require-text 必須
           .exhibit-box__main__delivery__chargebox__form
-          = f.collection_select :delivery_charge_id, DeliveryCharge.all, :id, :charge, {prompt: "選択してください"}, class: "item-select-form"
+          = f.collection_select :delivery_charge_id, DeliveryCharge.all, :id, :charge, {prompt: "選択してください"}, class: "item-select-form", required: ""
         .exhibit-box__main__delivery__methodbox.delivery-method-area
           -# ------------------------jQueryにて挿入される部分------------------------------------
         .exhibit-box__main__delivery__originbox
@@ -117,14 +116,13 @@
             %h3.bold-text 配送元の地域
             %p.require-text 必須
           .exhibit-box__main__delivery__originbox__form
-            = f.collection_select :delivery_origin_id, DeliveryOrigin.all, :id, :name, {prompt: "選択してください"}, class: "item-select-form"
+            = f.collection_select :delivery_origin_id, DeliveryOrigin.all, :id, :name, {prompt: "選択してください"}, class: "item-select-form", required: ""
         .exhibit-box__main__delivery__sizebox
           .exhibit-box__main__delivery__sizebox__text
             %h3.bold-text 配送物のサイズ
             %p.require-text 必須
           .exhibit-box__main__delivery__sizebox__form
-            = f.select :delivery_size, [], {}, class: "item-select-form" do
-              %option{ value: ""} 選択してください
+            = f.select :delivery_size, [], {prompt: "選択してください"}, class: "item-select-form", required: ""  do
               %option{ value: "1"} ネコポス（A4サイズ・厚さ2.5cm以内）
               %option{ value: "2"} 宅急便コンパクト
               %option{ value: "3"} 宅急便（60~160サイズ）
@@ -133,8 +131,7 @@
             %h3.bold-text 配送までの日数
             %p.require-text 必須
           .exhibit-box__main__delivery__delivery-days-box__form
-            = f.select :delivery_days, [], {}, class: "item-select-form" do
-              %option{ value: ""} 選択してください
+            = f.select :delivery_days, [], {prompt: "選択してください"}, class: "item-select-form", required: ""  do
               %option{ value: "1"} 1~2日で発送
               %option{ value: "2"} 2~3日で発送
               %option{ value: "3"} 4~7日で発送
@@ -146,7 +143,7 @@
           %h3.bold-text-price 販売価格
           %p.require-text-price 必須
           %p.dollar-mark￥
-          = f.text_field :price, placeholder: "0", class: "form-area-price"
+          = f.text_field :price, placeholder: "0", class: "form-area-price", required: "", max:"9999999", min: "300", type:"number"
         .exhibit-box__main__under__commission
           %h4.price-commission 販売手数料 (10%)
           %p.simple-hyphen-up ---
