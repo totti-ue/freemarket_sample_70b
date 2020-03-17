@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
 
     context 'can save' do
       it "is valid with nickname, email, password, password_confirmation, last_name, first_name, last_name_kana, first_name_kana, birthday" do
-        expect(build(:user, avatar: nil, profile: nil, sex: nil)).to be_valid
+        expeitem.validct(build(:user, avatar: nil, profile: nil, sex: nil)).to be_valid
       end
 
       it "is valid with a password that has more than 7 letters" do
