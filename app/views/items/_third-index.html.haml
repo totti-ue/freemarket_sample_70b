@@ -97,7 +97,7 @@
       - else
 
         - @items.each do |i|
-          .product.soldout-icon
+          .product.item-img
             = link_to item_path(i.id), class: "a-link" do
               = image_tag asset_path("#{i.images.first.image}"), class: "product-img"
               .product-body
@@ -185,7 +185,7 @@
       - else
 
         - @items_old.each do |i|
-          .product.soldout-icon
+          .product.item-img
             = link_to item_path(i.id), class: "a-link" do
               = image_tag asset_path("#{i.images.first.image}"), class: "product-img"
               .product-body
