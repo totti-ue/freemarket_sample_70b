@@ -97,7 +97,7 @@
       - else
 
         - @items.each do |i|
-          .product.buyerd-image
+          .product.soldout-icon
             = link_to item_path(i.id), class: "a-link" do
               = image_tag asset_path("#{i.images.first.image}"), class: "product-img"
               .product-body
@@ -117,11 +117,11 @@
                     -# i.buyer_id が nil かどうかを条件分岐。trueなら 正解, falseなら 不正解 と表示する
                   - if i.buyer_id.present?
                     .buyer-id-true-false__sold
-                      .buyer-id-true-false__sold__redmark
+                      .buyer-id-true-false__sold__sold-sticker
                         SOLD
                   - else 
-                    .buyer-id-true-false__exhibit
-                      .buyer-id-true-false__exhibit__bluemark
+                    .buyer-id-true-false__sale
+                      .buyer-id-true-false__sale__sale-sticker
                         SALE
 
                     
@@ -185,7 +185,7 @@
       - else
 
         - @items_old.each do |i|
-          .product.buyerd-image
+          .product.soldout-icon
             = link_to item_path(i.id), class: "a-link" do
               = image_tag asset_path("#{i.images.first.image}"), class: "product-img"
               .product-body
@@ -203,10 +203,9 @@
                     (税込)
                   - if i.buyer_id.present?
                     .buyer-id-true-false__sold
-                      .buyer-id-true-false__sold__redmark
+                      .buyer-id-true-false__sold__sold-sticker
                         SOLD
                   - else 
-                    .buyer-id-true-false__exhibit
-                      .buyer-id-true-false__exhibit__bluemark
+                    .buyer-id-true-false__sale
+                      .buyer-id-true-false__sale__sale-sticker
                         SALE
-                        
