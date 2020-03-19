@@ -1,5 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Card, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  describe "#create" do
+    let!(:user) {create(:user)}
+
+    context 'can save' do
+    end
+
+    context 'cannot save' do
+    end
+
+  end
 end

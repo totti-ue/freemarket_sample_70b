@@ -17,7 +17,7 @@
       .items-contents-box
         -# ①タイトル
         %h2.item-title
-          = @item.title
+          = @item.title 
         -# ②イメージ
         = image_tag asset_path("#{@item.images.first.image}"), class: "item-main-img"
         -# ③イメージ（他）
@@ -123,16 +123,15 @@
           = link_to "#", class: "option-link send-report" do
             %i.fa.fa-flag
             不適切な商品の通報
+        - if current_user.id == @item.seller_id
+        - else
+          - if @item.buyer_id == nil
+            .pay-action
+              = link_to purchase_item_path(@item) do
+                購入画面に進む
+          - else
+            こちらの商品はすでに購入済みです
 
-        -# ⬇ 追加で記載する場合は必要 ⬇
-        -# - if @item.seller_id == current_user.id 
-        -#   = link_to edit_item_path, class: "edit-btn" do
-        -#     %span.edit-btn__text 編集する
-        -#   = link_to item_path, method: :delete, class: "destroy-btn" do
-        -#     %span.destroy-btn__text 削除する
-        -# - else 
-        -#   = link_to root_path, class: "buyer" do
-        -#     %span 購入画面に進む
 
 
 

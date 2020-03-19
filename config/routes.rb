@@ -9,15 +9,21 @@ Rails.application.routes.draw do
   end
   root to: 'items#index'
 
-  resources :items
-  resources :users, only: :show
-  
-    # do
-    # resources :cards, only: [:new, :show] do
-    #   collection do
-    #     post 'show', to: 'card#show'
-    #   end
-    # end
-  # end
+  resources :items do
+    member do
+      get 'purchase', to: 'items#purchase'
+      post 'pay', to: 'items#pay'
+      get 'done', to: 'items#done'
+    end
+  end
+  resources :users, only: :show do
+    resources :cards, only: [:new, :show] do
+      collection do
+        post 'show', to: 'cards#show'
+        post 'pay', to: 'cards#pay'
+        post 'delete', to: 'cards#delete'
+      end
+    end
+  end
 
 end
