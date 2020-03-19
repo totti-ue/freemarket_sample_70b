@@ -82,7 +82,7 @@
         %p.nav-destination 発送元・お届け先住所変更
         = icon('fas', 'chevron-right', class: 'nav-icon')
     %li.nav-list
-      = link_to "#", class: "user-links" do
+      = link_to new_user_card_path(params[:id]), class: "user-links" do
         %p.nav-destination 支払い方法
         = icon('fas', 'chevron-right', class: 'nav-icon')
     %li.nav-list

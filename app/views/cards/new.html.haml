@@ -1,7 +1,20 @@
-= form_tag(new_user_card_path(current_user.id), method: :post, id: 'charge-form',  name: "inputForm") do
+= form_tag(pay_user_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
   %label カード番号
-  = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
-  %br
+  = text_field_tag "number", "", class: "card-number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+  .require
+  %ul.signup-card-list{style: "display:flex;"}
+    %li
+      = image_tag asset_path("logo/visa.png"),width:"60px",height:"40px"
+    %li
+      = image_tag asset_path("logo/mastercard.png"),width:"50px",height:"40px"
+    %li
+      = image_tag asset_path("logo/jcb.png"),width:"50px",height:"40px"
+    %li
+      = image_tag asset_path("logo/amex.png"),width:"50px",height:"40px"
+    %li
+      = image_tag asset_path("logo/diners_club.png"),width:"50px",height:"40px"
+    %li
+      = image_tag asset_path("logo/discover.png"),width:"50px",height:"40px"
   %label 有効期限
   %select#exp_month{name: "exp_month", type: "text"}
     %option{value: ""} --
@@ -37,3 +50,5 @@
   = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
   #card_token
   = submit_tag "追加する", id: "token_submit"
+
+= link_to "マイページに戻る", user_path(current_user)

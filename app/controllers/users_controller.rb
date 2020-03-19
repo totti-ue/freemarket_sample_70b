@@ -17,4 +17,8 @@ class UsersController < ApplicationController
      params.require(:user).permit(:birthday)
    end
 
+   def set_params
+    @user = User.find(params[:id])
+   end
+
 end
