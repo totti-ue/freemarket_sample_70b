@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, except: [:index, :new, :create]
+  before_action :set_card, only: [:purchase, :pay]
 
   def index
     @items = Item.includes(:images).order('created_at DESC').limit(3)
@@ -41,29 +42,25 @@ class ItemsController < ApplicationController
   
   require 'payjp'
 
-    # 購入確認画面用
+  # 購入確認画面用
   def purchase
-    card = Card.where(user_id: current_user.id).first
-    if card.blank?
+    if @card.blank?
       redirect_to controller: "card", action: "new"
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
     end
   end
 
   # 購入確定用
   def pay
-    card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
     amount: @item.price,
-    customer: card.customer_id,
+    customer: @card.customer_id,
     currency: 'jpy',
     )
-    # 購入確定のitemのbuyer_idのカラムにcurrent_user.idを加える
-    # @item_buyer = Item.find(params[:id])
     @item.update( buyer_id: current_user.id )
     redirect_to action: 'done'
   end
@@ -77,5 +74,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def set_card
+    @card = Card.where(user_id: current_user.id).first
+  end
 
 end
