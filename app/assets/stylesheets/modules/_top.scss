@@ -355,6 +355,7 @@ header {
           .product-img {
             height: 150px;
             width: 100%;
+            object-fit: cover;
           }
           .p-img1 {
             background-image: image-url("pict/sample1.png");
@@ -506,4 +507,50 @@ header {
 .icon-size {
   font-size: 62px;
   color: white;
+}
+
+.item-img {
+  position: relative;
+  height: 260px;
+}
+
+.buyer-id-true-false {
+  &__sold {
+    width: 0;
+    height: 0;
+    border-top: 40px solid #ea352d ;
+    border-right: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-left: 40px solid #ea352d ;
+    position: absolute;
+    top:0px;
+    left:0px;
+    &__sold-sticker {
+      transform: rotate(-45deg);
+      font-size: 20px;
+      margin:-13px 0px 0px -37px;
+      color: #fff;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+  }
+  &__sale {
+    width: 0;
+    height: 0;
+    border-top: 40px solid $main-color ;
+    border-right: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-left: 40px solid $main-color ;
+    position: absolute;
+    top:0px;
+    left:0px;
+    &__sale-sticker {
+      transform: rotate(-45deg);
+      font-size: 20px;
+      margin:-15px 0px 0px -35px;
+      color: #fff;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+  }
 }
