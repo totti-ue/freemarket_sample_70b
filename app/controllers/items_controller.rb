@@ -45,9 +45,9 @@ class ItemsController < ApplicationController
   # 購入確認画面用
   def purchase
     if @card.blank?
-      redirect_to controller: "card", action: "new"
+      redirect_to new_user_card_path(current_user.id)
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
     end
@@ -55,14 +55,14 @@ class ItemsController < ApplicationController
 
   # 購入確定用
   def pay
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
     Payjp::Charge.create(
     amount: @item.price,
     customer: @card.customer_id,
     currency: 'jpy',
     )
     @item.update( buyer_id: current_user.id )
-    redirect_to action: 'done'
+    redirect_to done_item_path(@item.id)
   end
 
   private

@@ -123,7 +123,7 @@
           = link_to "#", class: "option-link send-report" do
             %i.fa.fa-flag
             不適切な商品の通報
-        - if current_user.id != @item.seller_id
+        - if user_signed_in? && current_user.id != @item.seller_id
           - if @item.buyer_id == nil
             .pay-action
               = link_to purchase_item_path(@item) do
