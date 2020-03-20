@@ -407,3 +407,51 @@
     outline: 0;
   }
 }
+
+#previews {
+  width: 600px;
+  .preview-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.label-content{
+  margin: 10px auto 0;
+  background-color: #f2f2f2e7;
+  height: 100%;
+  line-height: 100px;
+  text-align: center;
+  border: 1px dashed #ccc;
+  .label-box__text-visible {
+    text-align: center;
+    line-height: 8;
+  }
+}
+
+.preview-box {
+  margin: 10px;
+  .lower-box {
+    display: flex;
+    justify-content: space-evenly;
+    .edit-btn {
+      cursor: pointer;
+      &:hover {
+        color: $main-color;
+      }
+    }
+    .delete-btn {
+      cursor: pointer;
+      &:hover {
+        color: $main-color;
+      }
+    }
+  }
+}
+
+.fas.fa-camera {
+  cursor: pointer;
+  &:hover {
+    font-size: 20px;
+  }
+}
