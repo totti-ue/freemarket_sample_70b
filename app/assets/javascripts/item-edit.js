@@ -91,7 +91,6 @@ $(document).ready(function(){
     // 画像の削除
     $(document).on('click', '.hidden-checkbox', function(e) {
       var count = $('.preview-box').length;
-      console.log(count)
       setLabel(count);
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
       $(`#preview-box__${id}`).remove();
