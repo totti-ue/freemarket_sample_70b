@@ -67,21 +67,8 @@
           .exhibit-box__main__details__categorybox__text
             %h3.bold-text カテゴリー
             %p.require-text 必須
-          .exhibit-box__main__details__categorybox__form
-            = f.select :category_id, [], {prompt: "選択してください"}, class: "item-select-form form-color", required: "" do
-              %option{ value: "1"} レディース
-              %option{ value: "2"} メンズ
-              %option{ value: "3"} ベビー・キッズ
-              %option{ value: "4"} インテリア・住まい・小物
-              %option{ value: "5"} 本・音楽・ゲーム
-              %option{ value: "6"} おもちゃ・ホビー・グッズ
-              %option{ value: "7"} コスメ・香水・美容
-              %option{ value: "8"} 家電・スマホ・カメラ
-              %option{ value: "9"} スポーツ・レジャー
-              %option{ value: "10"} ハンドメイド
-              %option{ value: "11"} チケット
-              %option{ value: "12"} 自動車・オートバイ
-              %option{ value: "13"} その他
+          .exhibit-box__main__details__categorybox__form#category-form
+            = f.collection_select :category_parent, @parents, :id, :name, {prompt: "選択してください"}, class: "item-select-form form-color", id: "parents-category", required: ""
         .exhibit-box__main__details__brandbox
           .exhibit-box__main__details__brandbox__text
             %h3.bold-text ブランド
@@ -143,14 +130,14 @@
           %h3.bold-text-price 販売価格
           %p.require-text-price 必須
           %p.dollar-mark￥
-          = f.text_field :price, placeholder: "0", class: "form-area-price form-color", required: "", max:"9999999", min: "300", type:"number"
+          = f.text_field :price, placeholder: "0", class: "form-area-price form-color",id: "price-form", required: "", max:"9999999", min: "300", type:"number"
         .exhibit-box__main__under__commission
           %h4.price-commission 販売手数料 (10%)
-          %p.simple-hyphen-up ---
+          %p.simple-hyphen-up#commission ー
         .exhibit-box__main__under__hyphen
         .exhibit-box__main__under__profit
           %h4.price-profit 販売利益
-          %p.simple-hyphen-down ---
+          %p.simple-hyphen-down#profit ー
         .exhibit-box__main__under__submit
           .exhibit-box__main__under__submit--exhibit-btn
             = f.submit '出品する',  class: 'exhibit-btn'

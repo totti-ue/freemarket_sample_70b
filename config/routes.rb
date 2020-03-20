@@ -25,4 +25,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :categories, only: :index do
+    collection do
+      get 'get_children', defaults: { format: 'json' }
+      get 'get_grandchildren', defaults: { format: 'json' }
+    end
+  end
+  
 end

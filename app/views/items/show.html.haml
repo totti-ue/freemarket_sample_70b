@@ -7,7 +7,7 @@
     %i.fa.fa-angle-right
     = link_to "カテゴリー（parent）", "#", class: "category-link hover-green"
     %i.fa.fa-angle-right
-    = link_to "カテゴリー（childre）", "#", class: "category-link hover-green"
+    = link_to "カテゴリー（children）", "#", class: "category-link hover-green"
     %i.fa.fa-angle-right
     %span.category-link.category-item
       カテゴリー（item）
@@ -50,7 +50,11 @@
                   カテゴリー
                 %td.table-data-right
                   = link_to "#", class: "item-data-link" do
-                    = @item.category_id
+                    = @parent.name
+                    = icon('fas', 'chevron-right', class: '')
+                    = @child.name
+                    = icon('fas', 'chevron-right', class: '')
+                    = @grandchild.name
               -# ⑥-cブランド
               %tr
                 %th.table-head-left

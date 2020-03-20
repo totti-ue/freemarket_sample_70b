@@ -87,7 +87,13 @@
         }
         &__form {
           width: 100%;
-          display: flex;
+        }
+        #parents-category, #children-category, #grandchildren-category {
+          margin-bottom: 20px;
+          &:after {
+            border: 2px solid rgb(255,100,100);
+            outline: 0;
+          }
         }
       }
       &__brandbox {
