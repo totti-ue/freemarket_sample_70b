@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
+    @parents = Category.roots
   end
   
   def create
@@ -22,6 +23,11 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @category_id = @item.category_id
+    @grandchild = Category.find(@category_id)
+    @child = @grandchild.parent
+    @parent = @child.parent
+    
   end
 
   def edit
