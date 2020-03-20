@@ -194,7 +194,6 @@ $(function(){
   $('#price-form').on('keyup', function(e){
     // e.preventDefault();
     let price = $(this).val();
-    console.log(`¥${price}`);
     if(price < 300 || price >9999999){
       $('#commission').text('ー');
       $('#profit').text('ー');
