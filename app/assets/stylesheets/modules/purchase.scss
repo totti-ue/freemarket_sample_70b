@@ -129,7 +129,7 @@
         }
       }
     }
-    &__registration-addless {
+    &__registration-address {
       background-color: white;
       padding: 40px;
       &__box {
@@ -152,8 +152,6 @@
       background-color: white;
       padding: 40px;
       text-align: center;
-      &__purchase {
-      }
     }
   }
 }
@@ -167,7 +165,7 @@
   padding: 14px 140px;
   text-decoration: none;
   &:hover {
-    background: #009999;
+    background-color: #009999;
   }
 }
 
