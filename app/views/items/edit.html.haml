@@ -40,11 +40,7 @@
                 - @item.images.length.upto(9) do |i|
                   %input{name: "item[images_attributes][#{i}][image]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
                   %input{name: "item[images_attributes][#{i}][_destroy]", id: "item_images_attributes_#{i}__destroy", class:"hidden-checkbox", type:"checkbox", value:"#{i}"} 
-
-              
-
-
-
+                  
       .exhibit-box__main__content
         .exhibit-box__main__content__namebox
           .exhibit-box__main__content__namebox__text
