@@ -29,8 +29,8 @@
               = image_tag asset_path("#{i.image}"), class: "purchase-img-list"
 
       .purchase-box__main__confirmation
-        .purchase-box__main__confirmation__box
-          %h3.purchase-item-price 合計金額 
+        .purchase-box__main__boxs__box
+          %h3.purchase-messages 合計金額 
           %br
           ¥
           = @item.price
@@ -40,8 +40,8 @@
           =label_tag :check1, "ポイントを使用(所持ポイント: 2400P)"
 
       .purchase-box__main__registration-payment
-        .purchase-box__main__registration-payment__box
-          %h3.payment-message 支払い方法
+        .purchase-box__main__boxs__box
+          %h3.purchase-messages 支払い方法
           %p.payment-description クレジットカード
           %br
             - if @default_card_information.blank?
@@ -54,9 +54,9 @@
             有効期限 
             = exp_month + " / " + exp_year
 
-      .purchase-box__main__registration-addless
-        .purchase-box__main__registration-addless__box
-          %h3.delivery-address 配送先
+      .purchase-box__main__registration-address
+        .purchase-box__main__boxs__box
+          %h3.purchase-messages 配送先
           %p.delivery-address-box
             〒
             = @address.post_code

@@ -47,7 +47,6 @@
             .purchase-item-title {
               font-size: 20px;
               font-weight: bold;
-              text-align: left;
               position: relative;
               margin: 20px 0 0 20px;
             }
@@ -55,9 +54,9 @@
           &--price {
             .purchase-item-price {
               position: absolute;
-              margin: 90px 0 0 130px;
+              margin: 70px 0 0 20px;
               font-weight: bold;
-              border-bottom:solid 1px;
+              font-size: 20px;
             }
           }
         }
@@ -96,57 +95,14 @@
     &__confirmation {
       background-color: white;
       padding: 40px;
-      &__box {
-        background-color: #f8f8f8;
-        padding: 40px;
-        max-width: 500px;
-        border-radius: 4px;
-        .purchase-item-price {
-          border-bottom: solid 2px $main-color;
-          font-weight: bold;
-          width: 100%;
-          margin-bottom: 20px;
-          text-align: left;
-        }
-      }
     }
     &__registration-payment {
       background-color: white;
       padding: 40px;
-      &__box {
-        background-color: #f8f8f8;
-        padding: 40px;
-        max-width: 500px;
-        border-radius: 4px;
-        .payment-message {
-          border-bottom: solid 2px $main-color;
-          font-weight: bold;
-          width: 100%;
-          margin-bottom: 20px;
-          .payment-description {
-            text-align: left;
-          }
-        }
-      }
     }
     &__registration-address {
       background-color: white;
       padding: 40px;
-      &__box {
-        background-color: #f8f8f8;
-        max-width: 500px;
-        padding: 40px;
-        border-radius: 4px;
-        .delivery-address {
-          border-bottom: solid 2px $main-color;
-          font-weight: bold;
-          width: 100%;
-          margin-bottom: 20px;
-          .delivery-address-box {
-            text-align: left;
-          }
-        }
-      }
     }
     &__submit {
       background-color: white;
@@ -212,5 +168,18 @@
       color: #fff;
       padding-bottom: 32px;
     }
+  }
+}
+
+.purchase-box__main__boxs__box {
+  background-color: #f8f8f8;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 4px;
+  .purchase-messages {
+    border-bottom: solid 2px $main-color;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
