@@ -1,3 +1,175 @@
-編集画面
+.exhibit-header
+  .exhibit-header__logo
+    = link_to '/', class: 'header-logo' do
+      = image_tag asset_path('logo/logo.png'), class: 'header-logo'
 
-= link_to "戻る", :back
+
+.exhibit-box
+  .exhibit-box__main
+    = form_with(model: @item, local: true, class: "form-boxs") do |f|
+      .exhibit-box__main__content
+        .exhibit-box__main__content__namebox
+          .exhibit-box__main__content__namebox__text
+            %h3.bold-text 出品画像
+            %p.require-text 必須
+            %span{style: "margin-left: 20px; padding-top: 8px"} ※最大10枚までアップロードできます
+          .exhibit-box__main__content__namebox__form
+            #input-box
+              #previews
+                %ul.preview-list
+                  - @item.images.each_with_index do |image, i|
+                    %li.preview-box
+                      .main-box
+                        = image_tag asset_path("#{image.image.url}"), data: { index: i }, width: "100", height: "100"
+                      .lower-box
+                        .update-box
+                        %label{for: "item_images_attributes_#{i}_image"}
+                          .edit-btn 編集
+                        .delete-box
+                        %label{for: "item_images_attributes_#{i}__destroy"}
+                          .delete-btn 削除
+                .label-content
+                  = f.label :"images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}" do
+                    %pre.fas.fa-camera
+              
+
+              .hidden-content
+                = f.fields_for :images do |i|
+                  = i.file_field :image, class: "hidden-field"
+                  = i.check_box:_destroy, class: "hidden-checkbox"
+                - @item.images.length.upto(9) do |i|
+                  %input{name: "item[images_attributes][#{i}][image]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
+                  %input{name: "item[images_attributes][#{i}][_destroy]", id: "item_images_attributes_#{i}__destroy", class:"hidden-checkbox", type:"checkbox", value:"#{i}"} 
+                  
+      .exhibit-box__main__content
+        .exhibit-box__main__content__namebox
+          .exhibit-box__main__content__namebox__text
+            %h3.bold-text 商品名
+            %p.require-text 必須
+          .exhibit-box__main__content__namebox__form
+            = f.text_field :title,placeholder: "40文字まで", maxlength: "40", required: "", class: "form-area-name form-color"
+
+        .exhibit-box__main__content__namebox
+          .exhibit-box__main__content__namebox__text
+            %h3.bold-text 商品の説明
+            %p.require-text 必須
+          .exhibit-box__main__content__namebox__form
+            = f.text_area :text, placeholder: "1,000文字まで（色、素材、重さ、定価、注意点など）", maxlength: "1000", required: "", class: "form-area-description form-color"
+
+      .exhibit-box__main__details
+        .exhibit-box__main__details__categorybox
+          %h2.item-details-title 商品の詳細
+          .exhibit-box__main__details__categorybox__text
+            %h3.bold-text カテゴリー
+            %p.require-text 必須
+          .exhibit-box__main__details__categorybox__form#category-form
+            = f.collection_select :category_parent, @parents, :id, :name, {prompt: "選択してください"}, class: "item-select-form form-color", id: "parents-category", required: ""
+        .exhibit-box__main__details__brandbox
+          .exhibit-box__main__details__brandbox__text
+            %h3.bold-text ブランド
+            %p.any-text 任意
+          .exhibit-box__main__details__brandbox__form
+            = f.text_field :brand_id, placeholder: "例） NIKE", class: "form-area-brand form-color"
+        .exhibit-box__main__details__statusbox
+          .exhibit-box__main__details__statusbox__text
+            %h3.bold-text 商品の状態
+            %p.require-text 必須
+          .exhibit-box__main__details__statusbox__form
+            = f.select :status, [], {prompt: "選択してください"}, class: "item-select-form form-color", required: "" do
+              %option{ value: "1"} 新品、未使用
+              %option{ value: "2"} 未使用に近い
+              %option{ value: "3"} 目立った傷や汚れなし
+              %option{ value: "4"} やや傷や汚れあり
+              %option{ value: "5"} 傷や汚れあり
+              %option{ value: "6"} 全体的に状態が悪い
+      
+      .exhibit-box__main__delivery
+        .exhibit-box__main__delivery__chargebox
+          %h2.item-delivery-title 配送について
+          .exhibit-box__main__delivery__chargebox__text
+            %h3.bold-text 配送料の負担
+            %p.require-text 必須
+          .exhibit-box__main__delivery__chargebox__form
+          = f.collection_select :delivery_charge_id, DeliveryCharge.all, :id, :charge, {prompt: "選択してください"}, class: "item-select-form form-color", required: ""
+        .exhibit-box__main__delivery__methodbox.delivery-method-area
+          -# ------------------------jQueryにて挿入される部分------------------------------------
+        .exhibit-box__main__delivery__originbox
+          .exhibit-box__main__delivery__originbox__text
+            %h3.bold-text 配送元の地域
+            %p.require-text 必須
+          .exhibit-box__main__delivery__originbox__form
+            = f.collection_select :delivery_origin_id, DeliveryOrigin.all, :id, :name, {prompt: "選択してください"}, class: "item-select-form form-color", required: ""
+        .exhibit-box__main__delivery__sizebox
+          .exhibit-box__main__delivery__sizebox__text
+            %h3.bold-text 配送物のサイズ
+            %p.require-text 必須
+          .exhibit-box__main__delivery__sizebox__form
+            = f.select :delivery_size, [], {prompt: "選択してください"}, class: "item-select-form form-color", required: ""  do
+              %option{ value: "1"} ネコポス（A4サイズ・厚さ2.5cm以内）
+              %option{ value: "2"} 宅急便コンパクト
+              %option{ value: "3"} 宅急便（60~160サイズ）
+        .exhibit-box__main__delivery__delivery-days-box
+          .exhibit-box__main__delivery__delivery-days-box__text
+            %h3.bold-text 配送までの日数
+            %p.require-text 必須
+          .exhibit-box__main__delivery__delivery-days-box__form
+            = f.select :delivery_days, [], {prompt: "選択してください"}, class: "item-select-form form-color", required: ""  do
+              %option{ value: "1"} 1~2日で発送
+              %option{ value: "2"} 2~3日で発送
+              %option{ value: "3"} 4~7日で発送
+      
+      .exhibit-box__main__under 
+        .exhibit-box__main__under__range
+          %h2.price-range-title 価格 (¥300〜9,999,999)
+        .exhibit-box__main__under__input
+          %h3.bold-text-price 販売価格
+          %p.require-text-price 必須
+          %p.dollar-mark￥
+          = f.text_field :price, placeholder: "0", class: "form-area-price form-color", required: "", max:"9999999", min: "300", type:"number"
+        .exhibit-box__main__under__commission
+          %h4.price-commission 販売手数料 (10%)
+          %p.simple-hyphen-up ---
+        .exhibit-box__main__under__hyphen
+        .exhibit-box__main__under__profit
+          %h4.price-profit 販売利益
+          %p.simple-hyphen-down ---
+        .exhibit-box__main__under__submit
+          .exhibit-box__main__under__submit--exhibit-btn
+            = f.submit '変更する',  class: 'exhibit-btn'
+          .exhibit-box__main__under__submit--return-btn
+            = link_to 'もどる', '/', class: 'return-btn'
+        .exhibit-box__main__under__attention
+          %p.under-attention
+            禁止されている
+            %span.action<>
+              = link_to '行為', '#', class: 'attention-text'
+            および
+            %span.exhibit-item<>
+              = link_to '出品物', '#', class: 'attention-text'
+            を必ずご確認ください。
+            %span.fake-brand<>
+              = link_to '偽ブランド品', '#', class: 'attention-text'
+            や
+            %span.swag-item<>
+              = link_to '盗品物', '#', class: 'attention-text'
+            などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
+            %span.merchant-terms<>
+              = link_to '加盟店規約', '#', class: 'attention-text'
+            に同意したことになります
+
+.exhibit-footer
+  .exhibit-footer__text
+    .exhibit-footer__text__box
+      %ul.exhibit-footer-ul
+        %li.exhibit-footer-list
+          = link_to 'プライバシーポリシー', '#', class: 'exhibit-footer-link'
+        %li.exhibit-footer-list
+          = link_to 'メルカリ利用規約', '#', class: 'exhibit-footer-link'
+        %li.exhibit-footer-list
+          = link_to '特定商取引に関する表記', '#', class: 'exhibit-footer-link'
+  
+  .exhibit-footer__logo
+    = link_to '/', class: 'footer-logo' do
+      = image_tag asset_path("logo/logo-white.png"), class: 'footer-logo'
+  .exhibit-footer__appname
+    %p.exhibit-last @FURIMA
