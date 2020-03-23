@@ -16,14 +16,12 @@
           %p.num 2
 
   %ul.user-page-tabs
-    %li.user-page-tabs--left.notice
-      = link_to user_path, class: "tab-link" do
-        お知らせ
-    %li.user-page-tabs--right.to-do-list
-      = link_to user_path, class: "tab-link" do
-        やることリスト
+    %li.user-page-tabs--tab.is-active
+      お知らせ
+    %li.user-page-tabs--tab
+      やることリスト
 
-  %ul.notification-container
+  %ul.notification-container.is-show
     -# - notice.each do |i|
     %li.notification-container__list.first-list
       = link_to user_path, class: "notice-links top-link" do
@@ -48,17 +46,24 @@
         = icon('fas', 'chevron-right', class: 'nav-icon')
     %li.notification-container__submit
       = link_to "一覧を見る", "user_path", class: "notice-links all-list"
+  
+  %ul.notification-container
+    %li.notification-container__list
+    %li.notification-container__list
+    %li.notification-container__list
+    %li.notification-container__submit
+      = link_to "一覧を見る", "user_path", class: "notice-links all-list"
 
-  %p.transaction
+  .transaction
     %h1.transaction__heading
       購入した商品
-    %ul.user-page-tabs.transaction__tabs
-      %li.user-page-tabs--left.current
-        = link_to user_path, class: "tab-link" do
-          取引中
-      %li.user-page-tabs--right.previous
-        = link_to user_path, class: "tab-link" do
-          過去の取引
+    %ul.transaction__tabs
+      %li.transaction__tabs--tab.is-active-two
+        取引中
+      %li.transaction__tabs--tab
+        過去の取引
     .transaction__log
-      %p.transaction__log--message
+      %p.transaction__log--message.is-show-two
         取引中の商品がありません
+      %p.transaction__log--message
+        過去の取引はありません
