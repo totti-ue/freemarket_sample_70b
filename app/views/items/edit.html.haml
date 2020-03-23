@@ -1,8 +1,4 @@
-.exhibit-header
-  .exhibit-header__logo
-    = link_to '/', class: 'header-logo' do
-      = image_tag asset_path('logo/logo.png'), class: 'header-logo'
-
+= render "item-header.html.haml"
 
 .exhibit-box
   .exhibit-box__main
@@ -157,19 +153,4 @@
               = link_to '加盟店規約', '#', class: 'attention-text'
             に同意したことになります
 
-.exhibit-footer
-  .exhibit-footer__text
-    .exhibit-footer__text__box
-      %ul.exhibit-footer-ul
-        %li.exhibit-footer-list
-          = link_to 'プライバシーポリシー', '#', class: 'exhibit-footer-link'
-        %li.exhibit-footer-list
-          = link_to 'メルカリ利用規約', '#', class: 'exhibit-footer-link'
-        %li.exhibit-footer-list
-          = link_to '特定商取引に関する表記', '#', class: 'exhibit-footer-link'
-  
-  .exhibit-footer__logo
-    = link_to '/', class: 'footer-logo' do
-      = image_tag asset_path("logo/logo-white.png"), class: 'footer-logo'
-  .exhibit-footer__appname
-    %p.exhibit-last @FURIMA
+= render "item-footer.html.haml"

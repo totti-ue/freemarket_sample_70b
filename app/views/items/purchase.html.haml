@@ -1,7 +1,4 @@
-.purchase-header
-  .purchase-header__logo
-    = link_to '/' do
-      = image_tag asset_path('logo/logo.png'), class: 'header-logo'
+= render "item-header.html.haml"
 
 .purchase-box
   .purchase-box__main
@@ -75,20 +72,4 @@
           %p.purchase-button
             %button.purchase-btn 購入する
 
-
-.purchase-footer
-  .purchase-footer__text
-    .purchase-footer__text__box
-      %ul.purchase-footer-ul
-        %li.purchase-footer-list
-          = link_to 'プライバシーポリシー', '#', class: 'purchase-footer-link'
-        %li.purchase-footer-list
-          = link_to 'メルカリ利用規約', '#', class: 'purchase-footer-link'
-        %li.purchase-footer-list
-          = link_to '特定商取引に関する表記', '#', class: 'purchase-footer-link'
-  
-  .purchase-footer__logo
-    = link_to '/', class: 'footer-logo' do
-      = image_tag asset_path("logo/logo-white.png"), class: 'footer-logo'
-  .purchase-footer__appname
-    %p.purchase-last @FURIMA
+= render "item-footer.html.haml"

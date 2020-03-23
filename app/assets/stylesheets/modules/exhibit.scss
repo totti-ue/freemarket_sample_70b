@@ -344,8 +344,7 @@
   text-align: center;
   width: 100%;
   padding-top: 20px;
-  &__text {
-    &__box {
+    &__text {
       .exhibit-footer-ul {
         display: flex;
         justify-content: space-around;
@@ -365,7 +364,6 @@
         }
       }
     }
-  }
   &__logo {
     width: 100%;
     max-width: 160px;

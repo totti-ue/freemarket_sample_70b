@@ -1,9 +1,4 @@
-.done-header
-  .done-header__logo
-    = link_to '/' do
-      = image_tag asset_path('logo/logo.png'), class: 'header-logo'
-
-//---------------------------------------------------------------------
+= render "item-header.html.haml"
 
 .done-box
   .done-box__main
@@ -22,21 +17,4 @@
       .done-box__main__content__block
       = link_to "トップページへ戻る", root_path, class: "done-link"
 
-//---------------------------------------------------------------------
-
-.done-footer
-  .done-footer__text
-    .done-footer__text__box
-      %ul.done-footer-ul
-        %li.done-footer-list
-          = link_to 'プライバシーポリシー', '#', class: 'done-footer-link'
-        %li.done-footer-list
-          = link_to 'メルカリ利用規約', '#', class: 'done-footer-link'
-        %li.done-footer-list
-          = link_to '特定商取引に関する表記', '#', class: 'done-footer-link'
-  
-  .done-footer__logo
-    = link_to '/', class: 'footer-logo' do
-      = image_tag asset_path("logo/logo-white.png"), class: 'footer-logo'
-  .done-footer__appname
-    %p.done-last @FURIMA
+= render "item-footer.html.haml"
