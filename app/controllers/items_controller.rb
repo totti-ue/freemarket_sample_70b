@@ -31,6 +31,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @parents = Category.roots
   end
   
   def update
