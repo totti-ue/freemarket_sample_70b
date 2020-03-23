@@ -57,6 +57,7 @@ class ItemsController < ApplicationController
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
     end
+      @address = Address.where(user_id: current_user.id)[0]
   end
 
   # 購入確定用
