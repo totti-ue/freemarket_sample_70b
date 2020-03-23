@@ -1,9 +1,42 @@
-購入完了確認画面
+.done-header
+  .done-header__logo
+    = link_to '/' do
+      = image_tag asset_path('logo/logo.png'), class: 'header-logo'
 
-%h2 購入が完了しました！
-%p 
-= @item.title
-%p
-= @item.price
+//---------------------------------------------------------------------
 
-= link_to "トップページへ戻る", root_path
+.done-box
+  .done-box__main
+    .done-box__main__content
+      %h2.done-content 購入が確定しました
+      %p.done-message 出品者と取引確認を行いましょう
+      .done-box__main__content__image
+        = image_tag asset_path("#{@item.images.first.image}"), class: "done-image"
+
+      .done-box__main__content__item
+        %p.done-item-title
+          = @item.title
+        %p.purchase-item-price
+          = @item.price
+          円(税込)
+      .done-box__main__content__block
+      = link_to "トップページへ戻る", root_path, class: "done-link"
+
+//---------------------------------------------------------------------
+
+.done-footer
+  .done-footer__text
+    .done-footer__text__box
+      %ul.done-footer-ul
+        %li.done-footer-list
+          = link_to 'プライバシーポリシー', '#', class: 'done-footer-link'
+        %li.done-footer-list
+          = link_to 'メルカリ利用規約', '#', class: 'done-footer-link'
+        %li.done-footer-list
+          = link_to '特定商取引に関する表記', '#', class: 'done-footer-link'
+  
+  .done-footer__logo
+    = link_to '/', class: 'footer-logo' do
+      = image_tag asset_path("logo/logo-white.png"), class: 'footer-logo'
+  .done-footer__appname
+    %p.done-last @FURIMA
