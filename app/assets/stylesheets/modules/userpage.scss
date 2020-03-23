@@ -102,7 +102,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        &--left,&--right {
+        &--tab {
           height: 100%;
           width: 50%;
           display: block;
@@ -110,13 +110,13 @@
           margin: auto;
           text-align: center;
           line-height: 73px;
-        }
-        &--left {
-          border-top: 2px solid $main-color;
-        }
-        &--right {
           background-color: $border-gray;
+          cursor: pointer;
         }
+
+        // &--right {
+        //   background-color: $border-gray;
+        // }
         .tab-link {
           display: block;
           text-decoration: none;
@@ -128,6 +128,7 @@
       }
       .notification-container {
         margin-bottom: 40px;
+        display: none;
         &__list {
           display: block;
           height: 80px;
@@ -195,6 +196,25 @@
           line-height: 60px;
           padding-left: 16px;
         }
+        &__tabs {
+          height: 73px;
+          width: 100%;
+          background-color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &--tab {
+            height: 100%;
+            width: 50%;
+            display: block;
+            font-weight: bold;
+            margin: auto;
+            text-align: center;
+            line-height: 73px;
+            background-color: $border-gray;
+            cursor: pointer;
+          }
+        }
         &__log {
           height: 240px;
           width: 100%;
@@ -205,9 +225,31 @@
             font-weight: bold;
             line-height: 240px;
             text-align: center;
+            display: none;
           }
         }
       }
     }
   }
+}
+
+
+
+.user-page-tabs--tab.is-active {
+  background-color: white;
+  border-top: 2px solid $main-color;
+}
+
+.notification-container.is-show {
+  display: block;
+}
+
+
+.transaction__tabs--tab.is-active-two {
+  background-color: white;
+  border-top: 2px solid $main-color;
+}
+
+.transaction__log--message.is-show-two{
+  display: block;
 }
