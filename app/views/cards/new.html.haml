@@ -1,4 +1,4 @@
-= render "card-header.html.haml"
+= render "card-header"
 
 .card-box
   .card-box__main
@@ -8,7 +8,7 @@
           .card-box__main__register__content__area
             %h2.card-register-title 
               クレジットカード登録
-            %h3.crad-register-title
+            %h3.crad-register-titles
               %label カード番号
             = text_field_tag "number", "", class: "card-form", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
             %p.signup-card
@@ -64,9 +64,9 @@
             = text_field_tag "cvc", "", class: "card-form", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
             #card_token
         .card-box__main__register__btn
-          = submit_tag "登録する", id: "token_submit"
+          = submit_tag "登録する", id: "token_submit", class: "card-submit-btn"
 
     .card-box__main__mypage-btn
       = link_to "マイページに戻る", user_path(current_user)
 
-= render "card-footer.html.haml"
+= render "card-footer"
