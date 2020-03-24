@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, except: [:index, :new, :create]
+  before_action :set_item, except: [:index, :new, :create, :search]
   before_action :set_card, only: [:purchase, :pay]
 
   def index
@@ -46,6 +46,11 @@ class ItemsController < ApplicationController
     @item.destroy
     redirect_to root_path
   end
+
+  def search
+    @items = Item.includes(:images).search(params[:keyword])
+    
+  end
   
   require 'payjp'
 
@@ -85,5 +90,6 @@ class ItemsController < ApplicationController
   def set_card
     @card = Card.where(user_id: current_user.id).first
   end
+  
 
 end

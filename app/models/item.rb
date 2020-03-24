@@ -27,4 +27,10 @@ class Item < ApplicationRecord
   validates :delivery_days, presence: true
   validates :images, presence: true
 
+
+  def self.search(search)
+    return Item.all unless search
+    Item.where('title collate utf8_unicode_ci LIKE ?', "%#{search}%")
+  end
+
 end
