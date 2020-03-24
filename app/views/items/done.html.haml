@@ -1,9 +1,20 @@
-購入完了確認画面
+= render "item-header.html.haml"
 
-%h2 購入が完了しました！
-%p 
-= @item.title
-%p
-= @item.price
+.done-box
+  .done-box__main
+    .done-box__main__content
+      %h2.done-content 購入が確定しました
+      %p.done-message 出品者と取引確認を行いましょう
+      .done-box__main__content__image
+        = image_tag asset_path("#{@item.images.first.image}"), class: "done-image"
 
-= link_to "トップページへ戻る", root_path
+      .done-box__main__content__item
+        %p.done-item-title
+          = @item.title
+        %p.purchase-item-price
+          = @item.price
+          円(税込)
+      .done-box__main__content__block
+      = link_to "トップページへ戻る", root_path, class: "done-link"
+
+= render "item-footer.html.haml"
