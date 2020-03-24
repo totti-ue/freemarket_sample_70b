@@ -1,0 +1,17 @@
+.search-view {
+  width: 100%;
+  padding-top: 20px;
+  border-top: 2px solid gray;
+  display: flex;
+  .search-prev{
+    @include width-height(200px, 200px);
+    margin: 10px 10px 10px 0;
+    &__img {
+      @include width-height(200px, 200px);
+      object-fit: cover;
+    }
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}

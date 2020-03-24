@@ -1,0 +1,8 @@
+= render "header"
+
+
+.search-view
+  - @items.each do |i|
+    = link_to item_path(i.id), class: "search-prev" do
+      = image_tag asset_path("#{i.images.first.image}"), class: "search-prev__img"
+
