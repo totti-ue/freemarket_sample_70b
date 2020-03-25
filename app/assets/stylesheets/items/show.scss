@@ -53,6 +53,20 @@ $sub-color: #f8f8f8;
           object-fit: cover;
         }
       }
+      .pay-action {
+        @include width-height(200px, 48px);
+        background-color: $main-color;
+        font-size: 18px;
+        border-radius: 24px;
+        margin: 32px auto 0;
+        text-align: center;
+        // border: none;
+        // display: block;
+        .submit {
+          color: #fff;
+          line-height: 48px;
+        }
+      }
     }
     .item-price-box {
       @include flex-center(center);
@@ -100,13 +114,17 @@ $sub-color: #f8f8f8;
         margin-top: 10px;
         padding: 5px 10px;
         &:hover {
-          opacity: 0.5;
+          opacity: 0.7;
         }
       }
       .register-favorites {
         border: 1px solid  #ffb340;
         color: $main-color;
         border-radius: 40px;
+        cursor: pointer;
+      }
+      .favorite-icon,.favorite-word {
+        color: $main-color;
       }
       .send-report {
         border: 1px solid gray;

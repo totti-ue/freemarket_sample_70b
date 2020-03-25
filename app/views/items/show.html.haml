@@ -67,18 +67,20 @@
                 %th.table-head-left
                   商品の状態
                 %td.table-data-right
-                  - if @item.status == "1"
+                  - if @item.status == 1
                     新品、未使用
-                  - elsif @item.status == "2"
+                  - elsif @item.status == 2
                     未使用に近い
-                  - elsif @item.status == "3"
+                  - elsif @item.status == 3
                     目立った傷や汚れなし
-                  - elsif @item.status == "4"
+                  - elsif @item.status == 4
                     やや傷や汚れあり
-                  - elsif @item.status == "5"
+                  - elsif @item.status == 5
                     傷や汚れあり
-                  - else @item.status == "6"
+                  - elsif @item.status == 6
                     全体的に状態が悪い
+                  - else
+                    無効な値です
               -# ⑥-f配送料
               %tr
                 %th.table-head-left
@@ -110,17 +112,15 @@
               -#   %td.table-data-right
               -#     = @item.delivery_method.name
         .item-options
-          = link_to "#", class: "option-link register-favorites" do
-            %i.fa.fa-star
-            お気に入り
-            0
+          %div{class: "option-link register-favorites", id: "likes-#{@item.id}"}
+            = render "likes/like", item: @item
           = link_to "#", class: "option-link send-report" do
             %i.fa.fa-flag
             不適切な商品の通報
         - if user_signed_in? && current_user.id != @item.seller_id
           - if @item.buyer_id == nil
             .pay-action
-              = link_to purchase_item_path(@item) do
+              = link_to purchase_item_path(@item), class: "submit" do
                 購入画面に進む
           - else
             こちらの商品はすでに購入済みです

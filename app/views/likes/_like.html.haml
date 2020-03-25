@@ -1,0 +1,23 @@
+- if user_signed_in? && @item.seller_id == current_user.id
+  =icon("far", "star", class: "favorite-icon")
+  %span.favorite-word
+    お気に入り
+    = item.likes.count
+- elsif user_signed_in?
+  - if Like.find_by(user_id: current_user.id, item_id: item.id)
+    = link_to release_item_like_path(item_id: item.id, id: current_user.id), method: :delete, remote: true do
+      = icon("fas", "star", class: "favorite-icon")
+      %span.favorite-word
+        お気に入り
+        = item.likes.count
+  - else
+    = link_to item_likes_path(item.id), method: :post, remote: true do
+      = icon("far", "star", class: "favorite-icon", id: "favorite-able")
+      %span.favorite-word
+        お気に入り
+        = item.likes.count
+- else
+  =icon("far", "star", class: "favorite-icon")
+  %span.favorite-word
+    お気に入り
+    = item.likes.count
