@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+  before_action :set_params, only: :show
+  
   def new
   end
 

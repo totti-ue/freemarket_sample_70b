@@ -1,16 +1,6 @@
 .top
   = render "header"
-  .items-show-top
-    = link_to "FURIMA", "#", class: "toppage-link hover-green"
-    %i.fa.fa-angle-right
-    = link_to "カテゴリー（ancestry）", "#", class: "category-link hover-green"
-    %i.fa.fa-angle-right
-    = link_to "カテゴリー（parent）", "#", class: "category-link hover-green"
-    %i.fa.fa-angle-right
-    = link_to "カテゴリー（children）", "#", class: "category-link hover-green"
-    %i.fa.fa-angle-right
-    %span.category-link.category-item
-      カテゴリー（item）
+  = render "breadcrumbs"
     
   .items-show-main
     .items-show-main__wrapper

@@ -1,0 +1,15 @@
+
+- case params.values_at :controller, :action
+- when ['users', 'show']
+  .items-show-top
+    - breadcrumb :mypage, @user
+    = breadcrumbs pretext: "",separator: " &rsaquo; "
+
+
+- case params.values_at :controller, :action
+- when ['items', 'show']
+  .items-show-top
+    - breadcrumb :item, @item
+    = breadcrumbs pretext: "",separator: " &rsaquo; "
+
+
