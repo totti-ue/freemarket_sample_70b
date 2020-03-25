@@ -8,27 +8,26 @@
       background-color: white;
       padding: 30px;
       &__content {
-        &__area {
-          text-align: center;
-          padding: 20px;
-          .card-details-title {
-            font-size: 20px;
-            font-weight: bold;
-            border-bottom: solid 2px $main-color;
-            width: 240px;
-            margin: 0 auto;
-            margin-bottom: 30px;
-          }
-          .crad-details-titles {
-            font-weight: bold;
-          }
-          .signup-card-list {
-            display: flex;
-            justify-content: center;
-            margin-top: 25px;
-            .card-list-image {
-              margin-right: 10px;
-            }
+        text-align: center;
+        padding: 20px;
+        .card-details-title {
+          font-size: 20px;
+          font-weight: bold;
+          border-bottom: solid 2px $main-color;
+          width: 240px;
+          margin: 0 auto;
+          margin-bottom: 30px;
+        }
+        .crad-details-titles {
+          font-weight: bold;
+          margin-top: 20px;
+        }
+        .signup-card-list {
+          display: flex;
+          justify-content: center;
+          margin-top: 25px;
+          .card-list-image {
+            margin-right: 10px;
           }
         }
       }
