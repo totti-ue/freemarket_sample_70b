@@ -8,12 +8,12 @@
         %p.login-list__top--text アカウントをお持ちでない方はこちら
         = link_to "新規会員登録", new_user_registration_path, class: "login-list__top--btn"
       .login-list__center
-        %button{ type: "submit", class: "login-top__btn" }
+        = link_to user_facebook_omniauth_authorize_path, method: :post, class: "login-top__btn" do
           = icon('fab', 'facebook-square')
-          Fecebookでログイン
-        %button{ type: "submit", class: "login-bottom__btn" }
+          .icon-facebook Facebookでログイン
+        = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "login-bottom__btn" do
           = icon('fab', 'google')
-          Googleでログイン
+          .icon-google Googleでログイン
       = form_with(model: @user, url: user_session_path, local: true) do |f|
         .login-list__form
           .login-form__main

@@ -90,3 +90,7 @@ gem 'mini_magick'
 gem 'active_hash'
 gem 'ancestry'
 gem 'fog-aws'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
