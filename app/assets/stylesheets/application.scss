@@ -12,4 +12,5 @@
 @import "modules/exhibit.scss";
 @import "modules/purchase.scss";
 @import "modules/done.scss";
-// card.scssはわざと消しています（コンフリクトが起こるから）
+@import "modules/cards.scss";
+@import "modules/cards-show.scss";
