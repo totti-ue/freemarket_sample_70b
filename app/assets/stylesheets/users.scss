@@ -811,3 +811,45 @@
     }
   }
 }
+
+.login-top__btn {
+  background: #385185;
+  color: #fff;
+  display: flex;
+  width: 50%;
+  margin: 16px auto;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+}
+.login-bottom__btn {
+  margin: 16px auto;
+  border: #979797 solid 1px;
+  color: #333;
+  display: flex;
+  width: 50%;
+  line-height: 48px;
+  font-size: 14px;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+}
+
+i.fab.fa-facebook-square, i.fab.fa-google {
+  font-size: 24px;
+  margin: auto 20px;
+  position: absolute;
+  left: 0;
+  top: 12px;
+}
+
+.icon-facebook, .icon-google {
+  margin: auto;
+}
