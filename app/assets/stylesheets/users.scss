@@ -842,7 +842,7 @@
   position: relative;
 }
 
-i.fab.fa-facebook-square {
+i.fab.fa-facebook-square, i.fab.fa-google {
   font-size: 24px;
   margin: auto 20px;
   position: absolute;
@@ -852,12 +852,4 @@ i.fab.fa-facebook-square {
 
 .icon-facebook, .icon-google {
   margin: auto;
-}
-
-i.fab.fa-google {
-  font-size: 24px;
-  margin: auto 20px;
-  position: absolute;
-  left: 0;
-  top: 12px;
 }
