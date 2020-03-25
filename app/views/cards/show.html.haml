@@ -1,13 +1,46 @@
-%label 登録クレジットカード情報
-%br
-= "**** **** **** " + @default_card_information.last4
-%br
-- exp_month = @default_card_information.exp_month.to_s
-- exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-= exp_month + " / " + exp_year
-%br
-= @default_card_information.name
-= form_tag(delete_user_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
-  %input{ type: "hidden", name: "card_id", value: "" }
-  %button 削除する
-= link_to "マイページに戻る", user_path(params[:id])
+= render "card-header"
+.card-box
+  .card-box__main
+    .card-box__main__details
+      .card-box__main__details__content
+        .card-box__main__details__content__area
+          %h2.card-details-title
+            %label 登録クレジットカード情報
+          %br
+          .card-box__main__register__content__area
+            %h3.crad-details-titles
+              %label カード番号
+            = "**** **** **** " + @default_card_information.last4
+            %br
+          .card-box__main__register__content__area
+            %h3.crad-details-titles
+              %label 有効期限
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+            %br
+            %p.signup-card
+              %ul.signup-card-list
+                %li
+                  = image_tag asset_path("logo/visa.png"),width:"60px",height:"40px", class: "card-list-image"
+                %li
+                  = image_tag asset_path("logo/mastercard.png"),width:"50px",height:"40px", class: "card-list-image"
+                %li
+                  = image_tag asset_path("logo/jcb.png"),width:"50px",height:"40px", class: "card-list-image"
+                %li
+                  = image_tag asset_path("logo/amex.png"),width:"50px",height:"40px", class: "card-list-image"
+                %li
+                  = image_tag asset_path("logo/diners_club.png"),width:"50px",height:"40px", class: "card-list-image"
+                %li
+                  = image_tag asset_path("logo/discover.png"),width:"50px",height:"40px", class: "card-list-image"
+            = @default_card_information.name
+            = form_tag(delete_user_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+              %input{ type: "hidden", name: "card_id", value: "" }
+              .card-box__main__register__content__area
+                .card-box__main__details__btn
+                  %button.card-submit-btn 削除する
+
+    .card-box__main__mypage-btn    
+      = link_to "マイページに戻る", user_path(params[:id])
+
+= render "card-footer"
