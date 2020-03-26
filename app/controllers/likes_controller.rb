@@ -1,8 +1,7 @@
 class LikesController < ApplicationController
-  # before_action :set_item, only: [:create, :release]
+  before_action :set_item, only: [:create, :release]
 
   def create
-    @item = Item.find(params[:item_id])
     @like = Like.create(user_id: current_user.id, item_id: params[:item_id])
     if @like.save
     else
@@ -19,7 +18,7 @@ class LikesController < ApplicationController
 
 
   private
-    # def set_item
-    #   @item = Item.find(params[:item_id])
-    # end
+    def set_item
+      @item = Item.find(params[:item_id])
+    end
 end
