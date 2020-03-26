@@ -27,7 +27,7 @@ class User < ApplicationRecord
   has_many :buyer_transactions, class_name: 'Transaction', :foreign_key => 'buyer_id'
   has_many :seller_transactions, class_name: 'Transaction', :foreign_key => 'seller_id'
   has_many :sns_credentials
-
+  has_many :likes
 
   validates :nickname, presence: true
   validates :last_name, presence: true, format: { with: /[ぁ-んァ-ンａ-ｚＡ-Ｚ一-龥]+/ }

@@ -15,6 +15,11 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    resources :likes, only: [:create] do
+      member do
+        delete 'release', to: 'likes#release'
+      end
+    end
     member do
       get 'purchase', to: 'items#purchase'
       post 'pay', to: 'items#pay'
