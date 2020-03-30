@@ -44,22 +44,22 @@ $(function () {
         //.emptyで小要素を削除
         $('.signup-card-list').empty()
         //.appendで対応する画像のみ追加
-        $('.signup-card-list').append(`<img src="/assets/logo/visa.png" width="60px" height="40px" class="card-list-image">`)
+        $('.signup-card-list').append(`<img src="/images/visa.png" width="60px" height="40px" class="card-list-image">`)
       } else if (targetText.slice(0,1) == 5 && String(targetText).length == 16) {
         $('.signup-card-list').empty()
-        $('.signup-card-list').append(`<img src="/assets/logo/master.png" width="60px" height="40px" class="card-list-image">`)
+        $('.signup-card-list').append(`<img src="/images/master.png" width="60px" height="40px" class="card-list-image">`)
       }   else if (targetText.slice(0,1) == 3 && String(targetText).length == 15) {
         $('.signup-card-list').empty()
-        $('.signup-card-list').append(`<img src="/assets/logo/amex.png" width="60px" height="40px" class="card-list-image">`)
+        $('.signup-card-list').append(`<img src="/images/amex.png" width="60px" height="40px" class="card-list-image">`)
       } else if (targetText.slice(0,1) == 3 && String(targetText).length == 14) {
         $('.signup-card-list').empty()
-        $('.signup-card-list').append(`<img src="/assets/logo/diners_club.png" width="60px" height="40px" class="card-list-image">`)
+        $('.signup-card-list').append(`<img src="/images/diners_club.png" width="60px" height="40px" class="card-list-image">`)
       } else if (targetText.slice(0,1) == 3 && String(targetText).length == 16) {
         $('.signup-card-list').empty()
-        $('.signup-card-list').append(`<img src="/assets/logo/jcb.png" width="60px" height="40px" class="card-list-image">`)
+        $('.signup-card-list').append(`<img src="/images/jcb.png" width="60px" height="40px" class="card-list-image">`)
       } else if (targetText.slice(0,1) == 6 && String(targetText).length == 16) {
         $('.signup-card-list').empty()
-        $('.signup-card-list').append(`<img src="/assets/logo/discover.png" width="60px" height="40px" class="card-list-image">`)
+        $('.signup-card-list').append(`<img src="/images/discover.png" width="60px" height="40px" class="card-list-image">`)
       } else {
       }
     });
