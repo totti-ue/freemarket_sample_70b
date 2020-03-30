@@ -11,7 +11,6 @@ class LikesController < ApplicationController
   end
 
   def release
-    @item = Item.find(params[:item_id])
     @like = Like.find_by(user_id: current_user.id, item_id: params[:item_id])
     @like.destroy
   end

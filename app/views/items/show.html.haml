@@ -23,7 +23,7 @@
             （税込）送料込み
         -# ⑤テキスト
         .item-text-contents
-          = @item.text
+          = simple_format @item.text
         -# ⑥item詳細（表）
         .item-show-table
           %table.item-details
