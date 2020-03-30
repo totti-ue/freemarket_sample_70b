@@ -1,18 +1,32 @@
 # README
 
+## Description
+- フリーマーケットアプリ
+
+## FEATURES
+- haml/SASS記法と、命名規則BEMを使ったマークアップ
+- ウィザード形式を用いたユーザー登録
+- ajaxを使用した非同期処理
+- pay.jpによる購入処理
+- 商品検索機能
+- カテゴリー機能
+- お気に入り機能
+- パンくず機能
+
 ## DEMO
 - ユーザー新規登録画面
 ![image](https://user-images.githubusercontent.com/60598010/77883871-efb16100-729e-11ea-847c-bb5a47158ed0.png)
 
 - 商品編集画面
 ![image](https://user-images.githubusercontent.com/60598010/77884180-8847e100-729f-11ea-923c-ed6c1e22535d.png)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
 
 * Ruby version
-
+2.5.1
 * System dependencies
 
 * Configuration
