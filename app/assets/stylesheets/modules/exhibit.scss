@@ -453,3 +453,10 @@
     font-size: 20px;
   }
 }
+
+#item_delivery_method_id {
+  &:focus {
+    outline: 0;
+    border: 1px solid #3CCACE;
+  }
+}

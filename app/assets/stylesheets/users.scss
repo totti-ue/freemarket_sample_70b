@@ -583,12 +583,17 @@
   }
 }
 
-
 .new_user__address {
   max-width: 343px;
   margin: 30px auto;
   .main-first {
     margin: 0;
+  }
+  #address_prefecture, #address_post_code, #address_city, #address_block, #address_building, #address_phone_number {
+    &:focus {
+      outline: 0;
+      border: 1px solid #3CCACE;
+    }
   }
   .main-name {
     font-weight: 600;
@@ -617,6 +622,10 @@
       font-size: 16px;
       margin: 8px 8px 0 0;
       box-sizing: border-box;
+      &:focus {
+        outline: 0;
+        border: 1px solid #3CCACE;
+      }
     }
     &__right {
       width: calc(50% - 6px);
@@ -629,6 +638,10 @@
       font-size: 16px;
       margin: 8px 0 0;
       box-sizing: border-box;
+      &:focus {
+        outline: 0;
+        border: 1px solid #3CCACE;
+      }
     }
   }
 }
