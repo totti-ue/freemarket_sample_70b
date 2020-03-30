@@ -1,8 +1,11 @@
 # README
 
 ## DEMO
-- ![image](https://user-images.githubusercontent.com/60598010/77883871-efb16100-729e-11ea-847c-bb5a47158ed0.png)
+- ユーザー新規登録画面
+![image](https://user-images.githubusercontent.com/60598010/77883871-efb16100-729e-11ea-847c-bb5a47158ed0.png)
 
+- 商品編集画面
+![image](https://user-images.githubusercontent.com/60598010/77884180-8847e100-729f-11ea-923c-ed6c1e22535d.png)
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
