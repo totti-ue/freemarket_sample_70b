@@ -198,7 +198,7 @@
                     %li
                       %i
                         = icon( "fas", "star", class: "star-icon")
-                      0
+                        = i.likes.count
                   %p.intax
                     (税込)
                   - if i.buyer_id.present?
