@@ -31,28 +31,28 @@
           事務局から個別メッセージ「登録完了のお知らせ」
         = icon('fas', 'chevron-right', class: 'nav-icon')
     %li.notification-container__list
-      = link_to "user_path", class: "notice-links" do
+      = link_to user_path, class: "notice-links" do
         .logo-box
           = image_tag asset_path('logo/box-logo.png'), height: '100%', width: '100%', class: 'logo'
         %p.message
           事務局から個別メッセージ「パスワード再設定のお願い」
         = icon('fas', 'chevron-right', class: 'nav-icon')
     %li.notification-container__list
-      = link_to "user_path", class: "notice-links" do
+      = link_to user_path, class: "notice-links" do
         .logo-box
           = image_tag asset_path('logo/box-logo.png'), height: '100%', width: '100%', class: 'logo'
         %p.message
           事務局から個別メッセージ「出品商品にコメントされました」
         = icon('fas', 'chevron-right', class: 'nav-icon')
     %li.notification-container__submit
-      = link_to "一覧を見る", "user_path", class: "notice-links all-list"
+      = link_to "一覧を見る", user_path, class: "notice-links all-list"
   
   %ul.notification-container
     %li.notification-container__list
     %li.notification-container__list
     %li.notification-container__list
     %li.notification-container__submit
-      = link_to "一覧を見る", "user_path", class: "notice-links all-list"
+      = link_to "一覧を見る", user_path, class: "notice-links all-list"
 
   .transaction
     %h1.transaction__heading
