@@ -20,6 +20,9 @@
 - 商品編集画面
 ![image](https://user-images.githubusercontent.com/60598010/77884180-8847e100-729f-11ea-923c-ed6c1e22535d.png)
 
+- お気に入り機能（非同期）
+![お気に入り機能 確認画面](https://user-images.githubusercontent.com/60733386/77893365-c7c9f980-72ae-11ea-9fd2-e49ef246a50a.gif)
+
 ## Requirement
 - Ruby 2.5.1
 - Rails 5.2.3
