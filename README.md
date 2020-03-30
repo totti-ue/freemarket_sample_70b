@@ -1,7 +1,7 @@
 # README
 
 ## Description
-- フリーマーケットアプリ
+- フリーマーケットアプリ（メルカリ）のクローンサイト。
 
 ## FEATURES
 - haml/SASS記法と、命名規則BEMを使ったマークアップ
@@ -20,13 +20,17 @@
 - 商品編集画面
 ![image](https://user-images.githubusercontent.com/60598010/77884180-8847e100-729f-11ea-923c-ed6c1e22535d.png)
 
+## Requirement
+- Ruby 2.5.1
+- Rails 5.2.3
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
 
 * Ruby version
-2.5.1
+
 * System dependencies
 
 * Configuration
