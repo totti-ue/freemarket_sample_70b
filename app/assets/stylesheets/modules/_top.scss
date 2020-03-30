@@ -429,9 +429,10 @@ header {
   color: #fff;
   text-align: center;
   &__content {
+    width: 700px;
     display: flex;
     justify-content: space-between;
-    margin: 0px 360px 0px 360px;
+    margin: 0 auto;
     &__box2 {
       margin-left: 20px;
     }
